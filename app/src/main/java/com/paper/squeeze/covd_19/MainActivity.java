@@ -109,9 +109,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
        if (id == R.id.nav_prevent) {
-            startActivity(new Intent(MainActivity.this,DetailActivity.class));
+           Intent intent = new Intent(MainActivity.this,DetailActivity.class);
+           intent.putExtra("type",1);
+           startActivity(intent);
         } else if (id == R.id.nav_symptom) {
-
+           Intent intent = new Intent(MainActivity.this,DetailActivity.class);
+           intent.putExtra("type",2);
+           startActivity(intent);
         } else if (id == R.id.nav_alert) {
 
         } else if (id == R.id.nav_news) {
