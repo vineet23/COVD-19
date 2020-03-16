@@ -38,6 +38,7 @@ import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
+    NavigationView navigationView;
     SupportMapFragment mapFragment;
     private LocationManager locationManager;
     private LocationListener listener;
@@ -58,9 +59,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
 
-        NavigationView navigationView = findViewById(R.id.navigation);
+        navigationView = findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_map);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -108,10 +108,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_map) {
-        }
-        else if (id == R.id.nav_prevent) {
-
+       if (id == R.id.nav_prevent) {
+            startActivity(new Intent(MainActivity.this,DetailActivity.class));
         } else if (id == R.id.nav_symptom) {
 
         } else if (id == R.id.nav_alert) {

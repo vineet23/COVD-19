@@ -5,9 +5,6 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_map"
-            android:title="@string/map" />
-        <item
             android:id="@+id/nav_prevent"
             android:title="@string/prevention" />
         <item
