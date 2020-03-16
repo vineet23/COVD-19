@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         NavigationView navigationView = findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_camera);
+        navigationView.setCheckedItem(R.id.nav_map);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -108,17 +108,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.nav_map) {
         }
-        else if (id == R.id.nav_gallery) {
+        else if (id == R.id.nav_prevent) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_symptom) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_alert) {
+
+        } else if (id == R.id.nav_news) {
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        }else if(id == R.id.nav_feedback){
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
