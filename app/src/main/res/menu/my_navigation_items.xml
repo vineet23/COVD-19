@@ -14,8 +14,8 @@
             android:id="@+id/nav_alert"
             android:title="@string/alert" />
         <item
-            android:id="@+id/nav_news"
-            android:title="@string/news" />
+            android:id="@+id/nav_register"
+            android:title="@string/register" />
     </group>
 
     <item android:title="Communicate">

@@ -9,8 +9,8 @@
     <string name="status">Safe</string>
     <string name="prevention">Precautions</string>
     <string name="symptoms">Symptoms</string>
-    <string name="alert">Alerts</string>
-    <string name="news">News</string>
+    <string name="alert">Alert and News</string>
+    <string name="register">Register case</string>
     <string name="help">Help</string>
     <string name="share">Share</string>
     <string name="feedback">Feedback</string>

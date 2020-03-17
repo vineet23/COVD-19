@@ -21,31 +21,20 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
-
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 
@@ -154,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            startActivity(intent);
         } else if (id == R.id.nav_alert) {
 
-        } else if (id == R.id.nav_news) {
+        } else if (id == R.id.nav_register) {
 
         } else if (id == R.id.nav_share) {
 
@@ -271,6 +260,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //to move the map
     private void moveCamera(LatLng latLng,float zoom){
         try {
+            // Clears the previously touched position
+            mMap.clear();
             mMap.setMyLocationEnabled(true);
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
         }catch (Exception e){}
@@ -312,6 +303,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             mMap.setMyLocationEnabled(true);
         }catch (Exception e){}
 
+        //when clicked on map
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng latLng) {
