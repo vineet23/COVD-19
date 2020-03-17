@@ -17,6 +17,11 @@
     <string name="why">Why?</string>
     <string name="next">NEXT</string>
     <string name="back">BACK</string>
+    <string name="location_needed">Location permission is needed.</string>
+    <string name="retry">Retry</string>
+    <string name="unable_detect">Unable to detect current location!</string>
+    <string name="detecting">Detecting....please make sure gps is turned on!</string>
+    <string name="search_location">Search for a location...</string>
 
     <string name="wash_header">Wash your hands frequently</string>
     <string name="wash_detail">Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</string>

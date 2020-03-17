@@ -1,5 +1,17 @@
 package com.paper.squeeze.covd_19;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.os.Build;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,29 +19,16 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.FragmentManager;
 
-import android.Manifest;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Build;
-import android.os.Bundle;
-import android.provider.Settings;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Toast;
-
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
@@ -40,8 +39,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     NavigationView navigationView;
     SupportMapFragment mapFragment;
-    private LocationManager locationManager;
-    private LocationListener listener;
+    GoogleMap mMap;
+    private FusedLocationProviderClient fusedLocationProviderClient;
+    //to store the current location
+    LatLng latLng;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +51,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+        //check the permissions
+        request_permission();
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
@@ -61,6 +61,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         navigationView = findViewById(R.id.navigation);
         navigationView.setNavigationItemSelectedListener(this);
+        //set the map fragment
+        mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +101,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
+            startActivity(new Intent(MainActivity.this,SearchActivity.class));
             return true;
         }
 
@@ -137,6 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         switch (requestCode) {
             case 10:
+                //to get the current location
                 configure_button();
                 break;
             default:
@@ -144,6 +150,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
 
+    //to check about location permission and fetch current location
     void configure_button() {
         // first check for permissions
         if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -155,17 +162,54 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         } else {
             // permission has been granted
-            locationManager.requestLocationUpdates("gps", 5000, 0, listener);
+            //get the current location
+            fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
+            try{
+                Task location = fusedLocationProviderClient.getLastLocation();
+                location.addOnCompleteListener(new OnCompleteListener() {
+                    @Override
+                    public void onComplete(@NonNull Task task) {
+                        if(task.isSuccessful()){
+                            Location currentLocation = (Location) task.getResult();
+                            try {
+                                //may be null
+                                moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 15f);
+                                //store the current location
+                                latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
+                            }catch (Exception e){
+                                //may gps will be off
+                                Toast.makeText(MainActivity.this,getString(R.string.detecting),Toast.LENGTH_SHORT).show();
+                                if (e instanceof NullPointerException && latLng!=null){
+                                    moveCamera(latLng,15f);
+                                }
+                            }
+                        }else{
+                            Toast.makeText(MainActivity.this,getString(R.string.unable_detect),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+            }catch (Exception e){
+                Log.e("Error",e.toString());
+            }
         }
     }
 
+    //to move the map
+    private void moveCamera(LatLng latLng,float zoom){
+        try {
+            mMap.setMyLocationEnabled(true);
+            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
+        }catch (Exception e){}
+    }
+
+    //to request the permissions for location
     private void request_permission() {
         if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this,
                 ACCESS_COARSE_LOCATION)) {
-
-            Snackbar.make(findViewById(R.id.map), "Location permission is needed.",
+            //show the snack bar to request permission
+            Snackbar.make(findViewById(R.id.map), getString(R.string.location_needed),
                     Snackbar.LENGTH_LONG)
-                    .setAction("retry", new View.OnClickListener() {
+                    .setAction(getString(R.string.retry), new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
                             ActivityCompat.requestPermissions(MainActivity.this,new String[]{ACCESS_COARSE_LOCATION, Manifest.permission.ACCESS_FINE_LOCATION}, 10);
@@ -181,39 +225,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onMapReady(final GoogleMap googleMap) {
+        mMap = googleMap;
         //set map rotation to false
-        googleMap.getUiSettings().setRotateGesturesEnabled(false);
-
-        locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
-
-        listener = new LocationListener() {
-            @Override
-            public void onLocationChanged(Location location) {
-                Log.d("Location",location.getLatitude()+" "+location.getLongitude());
-                googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(),location.getLongitude()),16));
-                locationManager.removeUpdates(this);
-            }
-
-            @Override
-            public void onStatusChanged(String s, int i, Bundle bundle) {
-
-            }
-
-            @Override
-            public void onProviderEnabled(String s) {
-
-            }
-
-            @Override
-            public void onProviderDisabled(String s) {
-                Toast.makeText(getApplicationContext(),"GPS is turned off, Please turn it on!",Toast.LENGTH_LONG).show();
-            }
-        };
-
+        mMap.getUiSettings().setRotateGesturesEnabled(false);
+        //set map move to location button false
+        mMap.getUiSettings().setMyLocationButtonEnabled(false);
+        //get the current location
         configure_button();
 
         try {
-            googleMap.setMyLocationEnabled(true);
+            mMap.setMyLocationEnabled(true);
         }catch (Exception e){}
     }
 }
