@@ -3,6 +3,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_search">Search</string>
+    <string name="api_key">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
 
     <string name="last_update">Last update on</string>
     <string name="status">Safe</string>
@@ -22,6 +23,9 @@
     <string name="unable_detect">Unable to detect current location!</string>
     <string name="detecting">Detecting....please make sure gps is turned on!</string>
     <string name="search_location">Search for a location...</string>
+    <string name="search_empty">Search with accurate keywords for better results</string>
+    <string name="no_internet">Oops! some error occurred. Make sure you are connected to internet.</string>
+    <string name="try_again">Oops! something went wrong. try again</string>
 
     <string name="wash_header">Wash your hands frequently</string>
     <string name="wash_detail">Regularly and thoroughly clean your hands with an alcohol-based hand rub or wash them with soap and water.</string>

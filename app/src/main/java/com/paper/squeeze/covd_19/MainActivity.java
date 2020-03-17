@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -20,18 +21,31 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.libraries.places.api.Places;
+import com.google.android.libraries.places.api.model.Place;
+import com.google.android.libraries.places.widget.Autocomplete;
+import com.google.android.libraries.places.widget.AutocompleteActivity;
+import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 
@@ -53,6 +67,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
         //check the permissions
         request_permission();
+
+       /* String apiKey = getString(R.string.api_key);
+
+        *//**
+         * Initialize Places. For simplicity, the API key is hard-coded. In a production
+         * environment we recommend using a secure mechanism to manage API keys.
+         *//*
+        if (!Places.isInitialized()) {
+            Places.initialize(getApplicationContext(), apiKey);
+        }*/
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
@@ -101,7 +125,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_search) {
-            startActivity(new Intent(MainActivity.this,SearchActivity.class));
+           /* // Set the fields to specify which types of place data to return.
+            List<Place.Field> fields = Arrays.asList(Place.Field.ID, Place.Field.NAME, Place.Field.ADDRESS, Place.Field.LAT_LNG);
+            // Start the autocomplete intent.
+            Intent intent = new Autocomplete.IntentBuilder(
+                    AutocompleteActivityMode.FULLSCREEN, fields).setCountry("NG") //NIGERIA
+                    .build(this);
+            startActivityForResult(intent, 200);*/
+           startActivityForResult(new Intent(MainActivity.this,SearchActivity.class),100);
             return true;
         }
 
@@ -133,6 +164,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+   @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        /*if (requestCode == 200) {
+            if (resultCode == RESULT_OK) {
+                Place place = Autocomplete.getPlaceFromIntent(data);
+                Log.i("Result", "Place: " + place.getName() + ", " + place.getId() + ", " + place.getAddress());
+                Toast.makeText(MainActivity.this, "ID: " + place.getId() + "address:" + place.getAddress() + "Name:" + place.getName() + " latlong: " + place.getLatLng(), Toast.LENGTH_LONG).show();
+                String address = place.getAddress();
+                // do query with address
+
+            } else if (resultCode == AutocompleteActivity.RESULT_ERROR) {
+                // TODO: Handle the error.
+                Status status = Autocomplete.getStatusFromIntent(data);
+                Toast.makeText(MainActivity.this, "Error: " + status.getStatusMessage(), Toast.LENGTH_LONG).show();
+                Log.i("Result", status.getStatusMessage());
+            } else if (resultCode == RESULT_CANCELED) {
+                // The user canceled the operation.
+            }
+        }*/
+        if(requestCode == 100){
+            if (resultCode == RESULT_OK){
+                try {
+                    double lat = data.getDoubleExtra("lat", 0.0d);
+                    double lng = data.getDoubleExtra("lng", 0.0d);
+                    // Creating a marker
+                    MarkerOptions markerOptions = new MarkerOptions();
+                    // Setting the position for the marker
+                    markerOptions.position(new LatLng(lat, lng));
+                    markerOptions.icon(BitmapDescriptorFactory.defaultMarker(220));
+                    // Clears the previously touched position
+                    mMap.clear();
+                    // Animating to the touched position
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),15f));
+                    // Placing a marker on the touched position
+                    mMap.addMarker(markerOptions);
+                }catch (Exception e){
+                    Toast.makeText(MainActivity.this,getString(R.string.try_again),Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     @Override
@@ -230,11 +304,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mMap.getUiSettings().setRotateGesturesEnabled(false);
         //set map move to location button false
         mMap.getUiSettings().setMyLocationButtonEnabled(false);
+        mMap.getUiSettings().setMapToolbarEnabled(false);
         //get the current location
         configure_button();
 
         try {
             mMap.setMyLocationEnabled(true);
         }catch (Exception e){}
+
+        mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+            @Override
+            public void onMapClick(LatLng latLng) {
+                // Creating a marker
+                MarkerOptions markerOptions = new MarkerOptions();
+                // Setting the position for the marker
+                markerOptions.position(latLng);
+                markerOptions.icon(BitmapDescriptorFactory.defaultMarker(220));
+                // Clears the previously touched position
+                mMap.clear();
+                // Animating to the touched position
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                // Placing a marker on the touched position
+                mMap.addMarker(markerOptions);
+            }
+        });
     }
 }
