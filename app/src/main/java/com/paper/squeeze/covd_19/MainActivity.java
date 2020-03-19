@@ -144,7 +144,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_tracker) {
             startActivity(new Intent(MainActivity.this,TrackerActivity.class));
         } else if (id == R.id.nav_register) {
-
+           //todo check gps enable
+           startActivity(new Intent(MainActivity.this,RegisterActivity.class));
         } else if (id == R.id.nav_share) {
 
         }else if(id == R.id.nav_feedback){
