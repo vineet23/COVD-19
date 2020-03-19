@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            intent.putExtra("type",2);
            startActivity(intent);
         } else if (id == R.id.nav_tracker) {
-
+            startActivity(new Intent(MainActivity.this,TrackerActivity.class));
         } else if (id == R.id.nav_register) {
 
         } else if (id == R.id.nav_share) {

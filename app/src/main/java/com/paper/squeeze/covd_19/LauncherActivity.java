@@ -25,7 +25,7 @@ public class LauncherActivity extends AppCompatActivity {
                     LauncherActivity.this.startActivity(new Intent(LauncherActivity.this, MainActivity.class));
                     finish();
                 }
-            }, 2500);
+            }, 2250);
         }
 
     }
