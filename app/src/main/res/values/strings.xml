@@ -19,6 +19,20 @@
     <string name="fatal_case">Fatal cases</string>
     <string name="recovered_case">Recovered cases</string>
     <string name="condition_victim">Condition of victim</string>
+    <string name="active">Active</string>
+    <string name="recovered">Recovered</string>
+    <string name="fatal">Fatal</string>
+    <string name="termsandcond">Notice</string>
+    <string name="i_agree">I agree to above terms</string>
+    <string name="done">Done</string>
+    <string name="terms_text">If found spamming your session will get rejected, which will result in
+        termination of the service for you. The data provided by you will be available for the others to check for the status.
+        We own the data provided by you and hence can modify or delete as per the quality of the data provided.
+        Please make sure you don\'t spam as it will be reflected to others and can create panic for the locals.
+        The data provided by you will be used to analyze the spread and effect of COVID-19, so make sure the data
+        is accurate and pure. Privacy is maintained and the data is secured, and is only intended to use for educational
+        and medical purpose. Help each other to be aware and lets fight together against COVID-19.
+    </string>
 
     <string name="why">Why?</string>
     <string name="next">NEXT</string>
