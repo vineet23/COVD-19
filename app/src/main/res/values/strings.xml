@@ -81,6 +81,12 @@
         *This list is not all inclusive. Please consult your medical provider for any other symptoms that are severe or concerning.</string>
     <string name="doctor_why"> </string>
 
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="gps_enable">Your GPS is required, do you want to enable it?</string>
+    <string name="detecting_gps">Detecting your gps. Please retry again</string>
+    <string name="location_dist">You can not register a case so far from your current location.</string>
+
     <string name="_header"></string>
     <string name="_detail"></string>
     <string name="_why"></string>

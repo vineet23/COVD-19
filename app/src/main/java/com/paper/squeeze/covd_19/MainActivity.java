@@ -1,9 +1,11 @@
 package com.paper.squeeze.covd_19;
 
 import android.Manifest;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
@@ -144,8 +147,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_tracker) {
             startActivity(new Intent(MainActivity.this,TrackerActivity.class));
         } else if (id == R.id.nav_register) {
-           //todo check gps enable
-           startActivity(new Intent(MainActivity.this,RegisterActivity.class));
+           //check gps enable
+           LocationManager locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
+           if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+               //if users lat lng is available
+               if (latLng!=null) {
+                   Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                   intent.putExtra("lat",latLng.latitude);
+                   intent.putExtra("lng",latLng.longitude);
+                   startActivity(intent);
+               }else
+                   //get the users lat lng
+                   Toast.makeText(MainActivity.this,getString(R.string.detecting_gps),Toast.LENGTH_SHORT).show();
+                   configure_button();
+           }else{
+               //enable gps and get the users lat lng
+               buildAlertMessageNoGps();
+           }
         } else if (id == R.id.nav_share) {
 
         }else if(id == R.id.nav_feedback){
@@ -154,6 +172,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    //show message for gps enabling
+    private void buildAlertMessageNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(getString(R.string.gps_enable))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.yes), new DialogInterface.OnClickListener() {
+                    public void onClick(@SuppressWarnings("unused") final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                })
+                .setNegativeButton(getString(R.string.no), new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, @SuppressWarnings("unused") final int id) {
+                        dialog.cancel();
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
     }
 
    @Override

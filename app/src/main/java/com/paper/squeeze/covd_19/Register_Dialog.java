@@ -6,14 +6,21 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.DialogFragment;
 
 public class Register_Dialog extends DialogFragment {
+
+    CheckBox checkBox;
+    Button done;
 
     @Nullable
     @Override
@@ -25,6 +32,34 @@ public class Register_Dialog extends DialogFragment {
             @Override
             public void onClick(View view) {
                 dismiss();
+            }
+        });
+
+        done = v.findViewById(R.id.done);
+        done.setEnabled(false);
+        done.setClickable(false);
+        checkBox = v.findViewById(R.id.agree);
+        checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if(b) {
+                    done.setClickable(true);
+                    done.setEnabled(true);
+                }
+                else{
+                    done.setEnabled(false);
+                    done.setClickable(false);
+                }
+            }
+        });
+
+        done.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (checkBox.isChecked()){
+                    //todo post data to server here
+                    dismiss();
+                }
             }
         });
 
