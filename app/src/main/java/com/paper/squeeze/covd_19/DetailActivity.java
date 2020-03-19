@@ -68,12 +68,12 @@ public class DetailActivity extends AppCompatActivity {
                 int pos = layoutManager.findFirstVisibleItemPosition();
                 if (pos!= details.size()-1) {
                     recyclerView.smoothScrollToPosition(pos + 1);
-                    if (pos + 1 == details.size() - 1) {
+                    /*if (pos + 1 == details.size() - 1) {
                         next.setText(getString(R.string.back));
-                    }
+                    }*/
                 }
                 else{
-                    next.setText(getString(R.string.next));
+                    /*next.setText(getString(R.string.next));*/
                     recyclerView.smoothScrollToPosition(0);
                 }
             }

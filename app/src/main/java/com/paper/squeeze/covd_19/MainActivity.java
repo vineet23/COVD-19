@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
            Intent intent = new Intent(MainActivity.this,DetailActivity.class);
            intent.putExtra("type",2);
            startActivity(intent);
-        } else if (id == R.id.nav_alert) {
+        } else if (id == R.id.nav_tracker) {
 
         } else if (id == R.id.nav_register) {
 

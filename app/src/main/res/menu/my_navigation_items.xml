@@ -11,8 +11,8 @@
             android:id="@+id/nav_symptom"
             android:title="@string/symptoms" />
         <item
-            android:id="@+id/nav_alert"
-            android:title="@string/alert" />
+            android:id="@+id/nav_tracker"
+            android:title="@string/tracker" />
         <item
             android:id="@+id/nav_register"
             android:title="@string/register" />

@@ -109,6 +109,7 @@ public class SearchActivity extends AppCompatActivity implements SearchInterface
         }
     }
 
+    //interface to send the clicked location from the recycler view
     @Override
     public void clickSearch(Address address) {
         Intent intent = new Intent();
