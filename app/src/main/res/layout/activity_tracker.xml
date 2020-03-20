@@ -62,6 +62,7 @@
                 android:paddingTop="24dp"
                 android:layout_marginEnd="32dp"
                 android:paddingBottom="16dp"
+                android:id="@+id/tracker_main"
                 android:orientation="horizontal"
                 android:clickable="true"
                 android:focusable="true"

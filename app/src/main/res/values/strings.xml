@@ -87,6 +87,7 @@
     <string name="detecting_gps">Detecting your gps. Please retry again</string>
     <string name="location_dist">You can not register a case so far from your current location.</string>
     <string name="last_update_status">Last update on the location</string>
+    <string name="country_head">Select a region</string>
 
     <string name="_header"></string>
     <string name="_detail"></string>

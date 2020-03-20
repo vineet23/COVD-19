@@ -1,6 +1,7 @@
 package com.paper.squeeze.covd_19;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -8,9 +9,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 
@@ -26,6 +31,8 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
 
     SupportMapFragment mapFragment;
     GoogleMap mMap;
+    TextView active,activenum,recovered,recoverednum,fatal,fatalnum,name,namenum;
+    LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +40,22 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
         setContentView(R.layout.activity_tracker);
 
         ImageView back = findViewById(R.id.back_tracker);
+        active = findViewById(R.id.active);
+        activenum = findViewById(R.id.active_num);
+        recovered = findViewById(R.id.recovered);
+        recoverednum = findViewById(R.id.recovered_num);
+        fatal = findViewById(R.id.fatal);
+        fatalnum = findViewById(R.id.fatal_num);
+        name = findViewById(R.id.name);
+        namenum = findViewById(R.id.name_num);
+        linearLayout = findViewById(R.id.tracker_main);
+
+        linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivityForResult(new Intent(TrackerActivity.this,CountryActivity.class),300);
+            }
+        });
 
         //set the map fragment
         mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -82,5 +105,15 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
         //DrawableCompat.setTint(vectorDrawable, tintColor);
         vectorDrawable.draw(canvas);
         return BitmapDescriptorFactory.fromBitmap(bitmap);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 300) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(getApplicationContext(), data.getIntExtra("result", 0) + " ", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
