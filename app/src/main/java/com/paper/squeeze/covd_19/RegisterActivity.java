@@ -146,5 +146,22 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
                 marker.setDraggable(true);
             }
         });
+
+        mMap.setOnMarkerDragListener(new GoogleMap.OnMarkerDragListener() {
+            @Override
+            public void onMarkerDragStart(Marker marker) {
+
+            }
+
+            @Override
+            public void onMarkerDrag(Marker marker) {
+
+            }
+
+            @Override
+            public void onMarkerDragEnd(Marker markerUpdate) {
+                marker = markerUpdate;
+            }
+        });
     }
 }
