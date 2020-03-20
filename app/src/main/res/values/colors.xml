@@ -4,5 +4,7 @@
     <color name="colorPrimaryDark">#7C000000</color>
     <color name="colorAccent">#0040FF</color>
     <color name="green">#00D146</color>
+    <color name="red">#FF0925</color>
+    <color name="orange">#FF5622</color>
     <color name="tracker">#72FF0033</color>
 </resources>
