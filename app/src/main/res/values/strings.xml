@@ -93,6 +93,14 @@
     <string name="loading">Loading....</string>
     <string name="registraion">Registration window is closed for now. Check later on </string>
     <string name="spam">Please do not spam. You have already registered a case, come back again later!</string>
+    <string name="Error">Error Occurred</string>
+    <string name="Gps">GPS not found</string>
+    <string name="danger">Danger</string>
+    <string name="unsafe">Unsafe</string>
+    <string name="confirmed_cases">Confirmed cases</string>
+    <string name="unsure_cases">Unsure cases</string>
+    <string name="confirmed">Confirmed</string>
+    <string name="unsure">Unsure</string>
 
     <string name="_header"></string>
     <string name="_detail"></string>

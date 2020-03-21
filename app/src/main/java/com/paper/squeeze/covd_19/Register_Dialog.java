@@ -88,6 +88,7 @@ public class Register_Dialog extends DialogFragment {
                 if (checkBox.isChecked() && !clicked){
                     try {
                         clicked = true;
+                        //get the place
                         Geocoder geocoder = new Geocoder(getContext(), Locale.getDefault());
                         List<Address> addresses = geocoder.getFromLocation(lat, lng, 1);
                         String place = "";

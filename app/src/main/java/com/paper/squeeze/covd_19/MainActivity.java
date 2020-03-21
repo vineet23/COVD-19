@@ -1,11 +1,10 @@
 package com.paper.squeeze.covd_19;
 
 import android.Manifest;
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
@@ -14,6 +13,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,6 +26,12 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,7 +39,9 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,6 +49,14 @@ import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
 
@@ -52,8 +68,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private FusedLocationProviderClient fusedLocationProviderClient;
     //to store the current location
     LatLng latLng;
+    LatLng statuslatlng;
     MaterialCardView statuscard;
-
+    TextView last,title,date,loading;
+    static int admin=0,user=0;
+    Marker marker;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +92,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (!Places.isInitialized()) {
             Places.initialize(getApplicationContext(), apiKey);
         }*/
+
+        last = findViewById(R.id.textView2);
+        title = findViewById(R.id.status);
+        date = findViewById(R.id.date);
+        loading = findViewById(R.id.loading);
 
         DrawerLayout drawerLayout = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.navigation_drawer_open,R.string.navigation_drawer_close);
@@ -98,8 +122,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         statuscard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Status_Dialog status_dialog = new Status_Dialog();
-                status_dialog.show(getSupportFragmentManager(),"status");
+                if (latLng != null && loading.getVisibility()!=View.VISIBLE) {
+                    Status_Dialog status_dialog = new Status_Dialog(admin,user,title.getText().toString(),date.getText().toString());
+                    status_dialog.show(getSupportFragmentManager(), "status");
+                }else{
+                    Toast.makeText(getApplicationContext(),getString(R.string.detecting),Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -187,6 +215,140 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return true;
     }
 
+    //update the status
+    public void updateStatus(final double lat,final double lng){
+        //to make views gone and fetch data
+        loading.setVisibility(View.VISIBLE);
+        date.setVisibility(View.GONE);
+        last.setVisibility(View.GONE);
+        title.setVisibility(View.GONE);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
+                getString(R.string.url) + "getstatus/" + String.format("%.6f", lat) + "/" + String.format("%.6f",lng) + "/5/",
+                null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    ArrayList<LocationData> locationDatas = new ArrayList<>();
+                    JSONArray array = response.getJSONArray("data");
+                    String datetime = response.getString("datetime");
+                    admin =0;user=0;
+                    for(int i=0;i<array.length();i++){
+                        JSONObject jsonObject = array.getJSONObject(i);
+                        locationDatas.add(new LocationData(jsonObject.getString("usertype"),
+                                jsonObject.getString("condition"),jsonObject.getDouble("latitude"),
+                                jsonObject.getDouble("longitude")));
+                        if (jsonObject.getString("usertype").equals("admin"))
+                            admin++;
+                        else
+                            user++;
+                    }
+                    if(mMap!=null){
+                        MarkerOptions mOption;
+                        for(LocationData locationData:locationDatas){
+                            // Creating a marker
+                            mOption = new MarkerOptions();
+                            // Setting the position for the marker
+                            mOption.position(new LatLng(locationData.getLat(),locationData.getLng()))
+                                    .snippet(locationData.getCondition());
+                            if (locationData.getUsertype().equals("admin")) {
+                                mOption.icon(BitmapDescriptorFactory.defaultMarker())
+                                .title(getString(R.string.confirmed));
+                            }
+                            else {
+                                mOption.icon(BitmapDescriptorFactory.defaultMarker(41))
+                                .title(getString(R.string.unsure));
+                            }
+                            // Placing a marker
+                            mMap.addMarker(mOption);
+                        }
+                    }
+                    //Safe
+                    if (admin==0 && user<=3){
+                        title.setText(getString(R.string.status));
+                        statuscard.setBackgroundColor(getResources().getColor(R.color.green));
+                        if (mMap!=null)
+                            mMap.addCircle(new CircleOptions()
+                                    .center(new LatLng(lat, lng))
+                                    .radius(5000)
+                                    .strokeColor(getResources().getColor(R.color.green))
+                                    .strokeWidth(1f)
+                                    .fillColor(getResources().getColor(R.color.green_fade)));
+                    }
+                    //Unsafe
+                    else if(admin==0){
+                        title.setText(getString(R.string.unsafe));
+                        statuscard.setBackgroundColor(getResources().getColor(R.color.orange));
+                        if (mMap!=null)
+                            mMap.addCircle(new CircleOptions()
+                                    .center(new LatLng(lat, lng))
+                                    .radius(5000)
+                                    .strokeWidth(1f)
+                                    .strokeColor(getResources().getColor(R.color.orange))
+                                    .fillColor(getResources().getColor(R.color.orange_fade)));
+                    }
+                    //Danger
+                    else{
+                        title.setText(getString(R.string.danger));
+                        statuscard.setBackgroundColor(getResources().getColor(R.color.red));
+                        if (mMap!=null)
+                            mMap.addCircle(new CircleOptions()
+                                    .center(new LatLng(lat, lng))
+                                    .radius(5000)
+                                    .strokeWidth(1f)
+                                    .strokeColor(getResources().getColor(R.color.red))
+                                    .fillColor(getResources().getColor(R.color.red_fade)));
+                    }
+                    date.setText(new SimpleDateFormat("dd-MM-yyyy").format(new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.SSSSSS'Z'").parse(datetime)));
+                    loading.setVisibility(View.GONE);
+                    //set them then make visible
+                    date.setVisibility(View.VISIBLE);
+                    title.setVisibility(View.VISIBLE);
+                    last.setVisibility(View.VISIBLE);
+                }catch (Exception e){
+                    loading.setText(getString(R.string.Error));
+                    statuscard.setBackgroundColor(getResources().getColor(R.color.red));
+                    loading.setVisibility(View.VISIBLE);
+                    date.setVisibility(View.GONE);
+                    last.setVisibility(View.GONE);
+                    title.setVisibility(View.GONE);
+                    Toast.makeText(getApplicationContext(),e.toString(),Toast.LENGTH_SHORT).show();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError volleyError) {
+                if (volleyError instanceof NetworkError)
+                    try {
+                        loading.setText(getString(R.string.Gps));
+                        statuscard.setBackgroundColor(getResources().getColor(R.color.red));
+                        loading.setVisibility(View.VISIBLE);
+                        date.setVisibility(View.GONE);
+                        last.setVisibility(View.GONE);
+                        title.setVisibility(View.GONE);
+                        Toast.makeText(getApplicationContext(), getString(R.string.no_internet), Toast.LENGTH_SHORT).show();
+                    }catch (Exception e){}
+                else
+                    try {
+                        loading.setText(getString(R.string.Error));
+                        statuscard.setBackgroundColor(getResources().getColor(R.color.red));
+                        loading.setVisibility(View.VISIBLE);
+                        date.setVisibility(View.GONE);
+                        last.setVisibility(View.GONE);
+                        title.setVisibility(View.GONE);
+                        Toast.makeText(getApplicationContext(), getString(R.string.try_again), Toast.LENGTH_SHORT).show();
+                    }catch (Exception e){}
+            }
+        }){
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Authorization", getString(R.string.auth));
+                return headers;
+            }
+        };
+        MySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
+    }
+
     //show message for gps enabling
     private void buildAlertMessageNoGps() {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -237,11 +399,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     markerOptions.position(new LatLng(lat, lng));
                     markerOptions.icon(BitmapDescriptorFactory.defaultMarker(220));
                     // Clears the previously touched position
-                    mMap.clear();
+                    if(marker!=null)
+                        marker.remove();
                     // Animating to the touched position
                     mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat,lng),15f));
+                    mMap.clear();
+                    updateStatus(lat,lng);
                     // Placing a marker on the touched position
-                    mMap.addMarker(markerOptions);
+                    marker = mMap.addMarker(markerOptions);
                 }catch (Exception e){
                     Toast.makeText(MainActivity.this,getString(R.string.try_again),Toast.LENGTH_SHORT).show();
                 }
@@ -288,10 +453,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             try {
                                 //may be null
                                 moveCamera(new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude()), 15f);
+                                if(latLng!=null) {
+                                    if (getKmFromLatLong(latLng.latitude, latLng.longitude,
+                                            currentLocation.getLatitude(), currentLocation.getLongitude()) > 5) {
+                                        updateStatus(currentLocation.getLatitude(), currentLocation.getLongitude());
+                                    }
+                                }else{
+                                    updateStatus(currentLocation.getLatitude(), currentLocation.getLongitude());
+                                }
                                 //store the current location
                                 latLng = new LatLng(currentLocation.getLatitude(), currentLocation.getLongitude());
                             }catch (Exception e){
                                 //may gps will be off
+
                                 Toast.makeText(MainActivity.this,getString(R.string.detecting),Toast.LENGTH_SHORT).show();
                                 if (e instanceof NullPointerException && latLng!=null){
                                     moveCamera(latLng,15f);
@@ -312,10 +486,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private void moveCamera(LatLng latLng,float zoom){
         try {
             // Clears the previously touched position
-            mMap.clear();
+            if (marker!=null)
+                marker.remove();
             mMap.setMyLocationEnabled(true);
             mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, zoom));
         }catch (Exception e){}
+    }
+
+    //to get the distance from the points in km
+    public static double getKmFromLatLong(double lat1, double lng1, double lat2, double lng2){
+        Location loc1 = new Location("");
+        loc1.setLatitude(lat1);
+        loc1.setLongitude(lng1);
+        Location loc2 = new Location("");
+        loc2.setLatitude(lat2);
+        loc2.setLongitude(lng2);
+        double distanceInMeters = loc1.distanceTo(loc2);
+        return distanceInMeters/1000;
     }
 
     //to request the permissions for location
@@ -357,18 +544,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         //when clicked on map
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
-            public void onMapClick(LatLng latLng) {
+            public void onMapClick(LatLng ltLng) {
                 // Creating a marker
                 MarkerOptions markerOptions = new MarkerOptions();
                 // Setting the position for the marker
-                markerOptions.position(latLng);
+                markerOptions.position(ltLng);
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(220));
                 // Clears the previously touched position
-                mMap.clear();
+                if (marker!=null) {
+                    if (getKmFromLatLong(statuslatlng.latitude,statuslatlng.longitude, ltLng.latitude, ltLng.longitude)>5) {
+                        mMap.clear();
+                        statuslatlng = ltLng;
+                        updateStatus(ltLng.latitude, ltLng.longitude);
+                    }
+                    marker.remove();
+                }else{
+                    statuslatlng = ltLng;
+                    mMap.clear();
+                    updateStatus(ltLng.latitude, ltLng.longitude);
+                }
                 // Animating to the touched position
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+                mMap.animateCamera(CameraUpdateFactory.newLatLng(ltLng));
                 // Placing a marker on the touched position
-                mMap.addMarker(markerOptions);
+                marker = mMap.addMarker(markerOptions);
             }
         });
     }

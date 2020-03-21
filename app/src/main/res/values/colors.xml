@@ -4,7 +4,10 @@
     <color name="colorPrimaryDark">#7C000000</color>
     <color name="colorAccent">#0040FF</color>
     <color name="green">#00D146</color>
+    <color name="green_fade">#5600D146</color>
     <color name="red">#FF0925</color>
-    <color name="orange">#FF5622</color>
+    <color name="red_fade">#57FF0925</color>
+    <color name="orange">#CA7902</color>
+    <color name="orange_fade">#57CA7902</color>
     <color name="tracker">#4FFF0033</color>
 </resources>
