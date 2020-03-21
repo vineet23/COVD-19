@@ -83,4 +83,39 @@
         5.嘴唇或脸发蓝 \n \n \n
         *此列表并非全部包含在内。如果有其他严重症状或相关症状，请咨询您的医疗服务提供者。</string>
     <string name="doctor_why"> </string>
+
+    <string name="yes">是</string>
+    <string name="no">没有</string>
+    <string name="gps_enable">您的GPS是必需的，您要启用它吗？</string>
+    <string name="detecting_gps">检测您的gps。请再试一次</string>
+    <string name="location_dist">您目前无法在当前位置注册案件。</string>
+    <string name="last_update_status">位置的最新更新</string>
+    <string name="country_head">选择一个地区</string>
+    <string name="loading">正在加载...。</string>
+    <string name="registraion">注册窗口暂时关闭。稍后再检查 </string>
+    <string name="spam">请不要垃圾邮件。您已经注册了案例，稍后再回来！</string>
+    <string name="Error">发生了错误</string>
+    <string name="Gps">找不到GPS</string>
+    <string name="danger">危险</string>
+    <string name="unsafe">不安全</string>
+    <string name="confirmed_cases">确诊病例</string>
+    <string name="unsure_cases">不确定的情况</string>
+    <string name="confirmed">已确认</string>
+    <string name="unsure">不确定</string>
+    <string name="info">此处提供的所有数据都是从多个来源获取的。请不要完全依赖它，请确保您了解当地情况。仅用于参考和教育目的</string>
+
+    <string name="communicate">通信</string>
+    <string name="chooser_title">打开并登录以继续</string>
+    <string name="share_title">分享应用到</string>
+    <string name="share_text">最终，COVID-19的应用程序更新了。无需再担心电晕的传闻和传播。出行前，请务必在应用中查看目的地。
+        \n \n 应用功能：\n
+        \n 1.支持世界上几乎所有语言。
+        \n 2.追踪COVID-19在您当地和搜寻地点的传播情况。
+        \n 3.注册处，用于注册COVID-19案件。
+        \n 4.列出COVID-19的所有预防措施和症状。
+        \n \n 与您所有的亲人，家人和朋友分享，以确保他们免遭这种大流行。
+        \n 从下面的链接下载它 \n
+    </string>
+    <string name="share_subject">请看看</string>
+
 </resources>

@@ -104,4 +104,16 @@
     <string name="info">All the data provided here is fetched from multiple sources. Please do not completely rely on it, make sure you are aware about your local situations. Use it for referencing and education purpose only </string>
 
     <string name="communicate">Communicate</string>
+    <string name="chooser_title">Open and sign in to continue</string>
+    <string name="share_title">Share app to</string>
+    <string name="share_text">Finally an app for COVID-19 updates. No more worrying about the rumors and spread of corona. Please always have a look at the destination in the app before travelling.
+        \n \n App features: \n
+        \n 1.Support to almost all the languages in the world.
+        \n 2.Track the spread of COVID-19 in your locality and searched places.
+        \n 3.A registration desk, to register a COVID-19 case.
+        \n 4.List of all the precautions and symptoms of COVID-19.
+        \n \n Share it with all your loved ones, family and friends to secure them form this pandemic.
+        \n Download it from the link below \n
+    </string>
+    <string name="share_subject">Please do have a look</string>
 </resources>

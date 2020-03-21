@@ -24,7 +24,7 @@
     <string name="condition_victim">Condición de víctima</string>
     <string name="active">Activa</string>
     <string name="recovered">Recuperada</string>
-    <string name="fatal">Fatal</string>
+    <string name="fatal">letal</string>
     <string name="termsandcond">darse cuenta</string>
     <string name="i_agree">Estoy de acuerdo con los términos anteriores</string>
     <string name="done">Hecho</string>
@@ -83,4 +83,39 @@
         5. Labios o cara azulados \n \n \n
         *Esta lista no es del todo inclusiva. Consulte a su proveedor médico para cualquier otro síntoma que sea grave o preocupante.</string>
     <string name="doctor_why"> </string>
+
+    <string name="yes">si</string>
+    <string name="no">No</string>
+    <string name="gps_enable">Se requiere su GPS, ¿desea habilitarlo?</string>
+    <string name="detecting_gps">Detectando tus gps. Vuelva a intentarlo de nuevo.</string>
+    <string name="location_dist">No puede registrar un caso tan lejos de su ubicación actual.</string>
+    <string name="last_update_status">Última actualización en la ubicación</string>
+    <string name="country_head">Seleccione una región</string>
+    <string name="loading">Cargando....</string>
+    <string name="registraion">La ventana de registro está cerrada por ahora. Verifique luego</string>
+    <string name="spam">Por favor no hagas spam. Ya has registrado un caso, ¡vuelve más tarde!</string>
+    <string name="Error">Se produjo un error</string>
+    <string name="Gps">GPS no encontrado</string>
+    <string name="danger">Peligro</string>
+    <string name="unsafe">Insegura</string>
+    <string name="confirmed_cases">Casos confirmados</string>
+    <string name="unsure_cases">Casos inseguros</string>
+    <string name="confirmed">Confirmada</string>
+    <string name="unsure">Insegura</string>
+    <string name="info">Todos los datos proporcionados aquí se obtienen de múltiples fuentes. No confíes completamente en él, asegúrate de estar al tanto de tus situaciones locales. Úselo solo para fines de referencia y educación</string>
+
+    <string name="communicate">Comunicar</string>
+    <string name="chooser_title">Abrir e iniciar sesión para continuar</string>
+    <string name="share_title">Compartir aplicación a</string>
+    <string name="share_text">Finalmente una aplicación para las actualizaciones de COVID-19. No más preocuparse por los rumores y la propagación de la corona. Siempre eche un vistazo al destino en la aplicación antes de viajar.
+        \n \n Características de la aplicación: \n
+        \n 1. Admite casi todos los idiomas del mundo.
+        \n 2. Haga un seguimiento de la propagación de COVID-19 en su localidad y lugares buscados.
+        \n 3.Un escritorio de registro, para registrar un caso COVID-19.
+        \n 4.Lista de todas las precauciones y síntomas de COVID-19.
+        \n \n Compártalo con todos sus seres queridos, familiares y amigos para protegerlos de esta pandemia.
+        \n Descárgalo desde el siguiente enlace \n
+    </string>
+    <string name="share_subject">Por favor, eche un vistazo</string>
+
 </resources>

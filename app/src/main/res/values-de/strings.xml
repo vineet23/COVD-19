@@ -12,7 +12,7 @@
     <string name="status">Sicher</string>
     <string name="prevention">Vorsichtsmaßnahmen</string>
     <string name="symptoms">Symptome</string>
-    <string name="tracker">Tracker</string>
+    <string name="tracker">Spur</string>
     <string name="register">Fall registrieren</string>
     <string name="register_name">Registrieren</string>
     <string name="help">Hilfe</string>
@@ -83,5 +83,39 @@
         5.Blue Lippen oder Gesicht \n \n \n
         * Diese Liste ist nicht vollständig. Bitte wenden Sie sich an Ihren Arzt, wenn andere schwerwiegende oder besorgniserregende Symptome vorliegen.</string>
     <string name="doctor_why"> </string>
+
+    <string name="yes">Ja</string>
+    <string name="no">Nein</string>
+    <string name="gps_enable">Ihr GPS wird benötigt, möchten Sie es aktivieren?</string>
+    <string name="detecting_gps">Erkennen Sie Ihr GPS. Bitte versuchen Sie es erneut</string>
+    <string name="location_dist">Sie können einen Fall bisher nicht von Ihrem aktuellen Standort aus registrieren.</string>
+    <string name="last_update_status">Letzte Aktualisierung des Standorts</string>
+    <string name="country_head">Wählen Sie eine Region aus</string>
+    <string name="loading">Wird geladen....</string>
+    <string name="registraion">Das Registrierungsfenster ist vorerst geschlossen. Überprüfen Sie später</string>
+    <string name="spam">Bitte nicht spammen. Sie haben bereits einen Fall registriert, kommen Sie später wieder!</string>
+    <string name="Error">Ein Fehler ist aufgetreten</string>
+    <string name="Gps">GPS nicht gefunden</string>
+    <string name="danger">Achtung</string>
+    <string name="unsafe">Unsicher</string>
+    <string name="confirmed_cases">Bestätigte Fälle</string>
+    <string name="unsure_cases">Unsichere Fälle</string>
+    <string name="confirmed">Bestätigt</string>
+    <string name="unsure">Unsicher</string>
+    <string name="info">Alle hier angegebenen Daten stammen aus mehreren Quellen. Bitte verlassen Sie sich nicht vollständig darauf, stellen Sie sicher, dass Sie sich Ihrer lokalen Situation bewusst sind. Verwenden Sie es nur zu Referenzierungs- und Bildungszwecken</string>
+
+    <string name="communicate">Kommunizieren</string>
+    <string name="chooser_title">Öffnen und anmelden, um fortzufahren</string>
+    <string name="share_title">App teilen an</string>
+    <string name="share_text">Endlich eine App für COVID-19-Updates. Keine Sorge mehr um die Gerüchte und die Verbreitung von Korona. Bitte schauen Sie sich vor Reiseantritt immer das Ziel in der App an.
+        \n \n App-Funktionen: \n
+        \n 1. Unterstützung für fast alle Sprachen der Welt.
+        \n 2. Verfolgen Sie die Verbreitung von COVID-19 in Ihrer Region und an den gesuchten Orten.
+        \n 3. Ein Registrierungsschalter, um einen COVID-19-Fall zu registrieren.
+        \n 4.Liste aller Vorsichtsmaßnahmen und Symptome von COVID-19.
+        \n \n Teile es mit all deinen Lieben, deiner Familie und deinen Freunden, um sie vor dieser Pandemie zu schützen.
+        \n Laden Sie es über den folgenden Link herunter \n
+    </string>
+    <string name="share_subject">Bitte schauen Sie mal</string>
 
 </resources>

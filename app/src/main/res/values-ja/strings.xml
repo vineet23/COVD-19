@@ -83,4 +83,40 @@
         5.唇または顔の青みがかった \n \n \n
         *このリストはすべてを網羅しているわけではありません。重度または懸念されるその他の症状については、医療提供者にご相談ください。</string>
     <string name="doctor_why"> </string>
+
+    <string name="yes">はい</string>
+    <string name="no">番号</string>
+    <string name="gps_enable">GPSが必要です。有効にしますか？</string>
+    <string name="detecting_gps">GPSを検出します。もう一度お試しください</string>
+    <string name="location_dist">現在の場所からケースを登録することはできません。</string>
+    <string name="last_update_status">場所の最終更新</string>
+    <string name="country_head">地域を選択</string>
+    <string name="loading">読み込んでいます...</string>
+    <string name="registraion">現在、登録ウィンドウは閉じられています。後で確認 </string>
+    <string name="spam">スパムしないでください。既にケースを登録しています。後でまた戻ってください！</string>
+    <string name="Error">エラーが発生しました</string>
+    <string name="Gps">GPSが見つかりません</string>
+    <string name="danger">危険</string>
+    <string name="unsafe">安全でない</string>
+    <string name="confirmed_cases">確認されたケース</string>
+    <string name="unsure_cases">不明なケース</string>
+    <string name="confirmed">確認済み</string>
+    <string name="unsure">わからない</string>
+    <string name="info">ここで提供されるすべてのデータは、複数のソースから取得されます。完全にそれに依存しないでください、あなたがあなたの地元の状況について知っていることを確認してください。参照および教育目的のみに使用します</string>
+
+    <string name="communicate">通信する</string>
+    <string name="chooser_title">開いてログインして続行します</string>
+    <string name="share_title">アプリを共有する</string>
+    <string name="share_text">最後に、COVID-19アップデート用のアプリ。コロナの噂や広がりについて心配する必要はもうありません。旅行する前に、常にアプリで目的地を見てください。
+        \n \nアプリの機能：\n
+        \n 1.世界中のほぼすべての言語をサポートしています。
+        \n 2.お住まいの地域と検索した場所でのCOVID-19の広がりを追跡します。
+        \n 3. COVID-19ケースを登録するための登録デスク。
+        \n 4.COVID-19のすべての予防措置と症状のリスト。
+        \n \n 大切な人、家族、友人と共有して、このパンデミックから保護しましょう。
+        \n 以下のリンクからダウンロードしてください \n
+    </string>
+    <string name="share_subject">ぜひご覧ください</string>
+
+
 </resources>

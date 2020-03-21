@@ -227,13 +227,22 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                buildAlertMessageNoGps();
            }
         } else if (id == R.id.nav_share) {
-
+           String shareBody = "\n https://rebrand.ly/covid19app";
+           Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+           sharingIntent.setType("text/plain");
+           sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
+           sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, getString(R.string.share_text)+shareBody);
+           startActivity(Intent.createChooser(sharingIntent, getResources().getString(R.string.share_title)));
         }else if(id == R.id.nav_feedback){
            //open feedback form
            String url = "https://www.papersqueeze.com/form/covid";
            Intent i = new Intent(Intent.ACTION_VIEW);
            i.setData(Uri.parse(url));
-           startActivity(i);
+           // Always use string resources for UI text. This says something like "Share this photo with"
+           String title = getString(R.string.chooser_title);
+           // Create and start the chooser
+           Intent chooser = Intent.createChooser(i, title);
+           startActivity(chooser);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

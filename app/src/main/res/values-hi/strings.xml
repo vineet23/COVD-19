@@ -85,4 +85,38 @@
         *इस सूची सब समावेशी नहीं है। किसी भी अन्य लक्षणों के लिए कृपया अपने चिकित्सा प्रदाता से परामर्श करें जो गंभीर या संबंधित हैं।</string>
     <string name="doctor_why"> </string>
 
+    <string name="yes">हाँ</string>
+    <string name="no">नहीं</string>
+    <string name="gps_enable">आपका GPS आवश्यक है, क्या आप इसे सक्षम करना चाहते हैं?</string>
+    <string name="detecting_gps">अपने जीपीएस का पता लगाने। कृपया फिर से प्रयास करें</string>
+    <string name="location_dist">आप अपने वर्तमान स्थान से अब तक कोई मामला दर्ज नहीं कर सकते।</string>
+    <string name="last_update_status">स्थान पर अंतिम अद्यतन</string>
+    <string name="country_head">एक क्षेत्र का चयन करें</string>
+    <string name="loading">लोड हो रहा है....</string>
+    <string name="registraion">पंजीकरण विंडो अभी बंद है। बाद में जाँच करें </string>
+    <string name="spam">कृपया स्पैम न करें। आपने पहले ही एक मामला दर्ज कर लिया है, बाद में फिर से आएँगे!</string>
+    <string name="Error">त्रुटि हुई</string>
+    <string name="Gps">जीपीएस नहीं मिला</string>
+    <string name="danger">खतरा</string>
+    <string name="unsafe">असुरक्षित</string>
+    <string name="confirmed_cases">मामलों की पुष्टि की</string>
+    <string name="unsure_cases">असुरक्षित मामले</string>
+    <string name="confirmed">की पुष्टि की</string>
+    <string name="unsure">अनिश्चित</string>
+    <string name="info">यहां उपलब्ध कराए गए सभी डेटा को कई स्रोतों से प्राप्त किया जाता है। कृपया इस पर पूरी तरह से भरोसा न करें, सुनिश्चित करें कि आप अपनी स्थानीय स्थितियों के बारे में जानते हैं। इसका उपयोग केवल संदर्भ और शिक्षा के उद्देश्य के लिए करें</string>
+
+    <string name="communicate">संवाद</string>
+    <string name="chooser_title">जारी रखने के लिए खोलें और हस्ताक्षर करें</string>
+    <string name="share_title">को शेयर करें</string>
+    <string name="share_text">अंत में COVID-19 अपडेट के लिए एक ऐप। कोरोना की अफवाहों और प्रसार के बारे में अधिक चिंता नहीं। यात्रा से पहले ऐप में गंतव्य पर हमेशा एक नज़र डालें।
+        \n \n ऐप की विशेषताएं: \n
+        \n 1. दुनिया की लगभग सभी भाषाओं का समर्थन करें।
+        \n 2. अपने इलाके और खोजे गए स्थानों पर COVID-19 का प्रसार करें।
+        \n3. पंजीकरण डेस्क COVID-19 केस दर्ज करने के लिए
+        \n4. COVID-19 की सभी सावधानियों और लक्षणों के बारे में बताएं।
+        \n \n अपने सभी प्रियजनों, परिवार और दोस्तों के साथ साझा करें।
+        \n इसे नीचे दिए गए लिंक से डाउनलोड करें \n
+    </string>
+    <string name="share_subject">कृपया एक नज़र डालें</string>
+
 </resources>

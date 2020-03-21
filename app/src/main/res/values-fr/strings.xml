@@ -83,4 +83,39 @@
         5.Lustrer les lèvres ou le visage \n \n \n
         * Cette liste n\'est pas tout compris. Veuillez consulter votre médecin pour tout autre symptôme grave ou préoccupant.</string>
     <string name="doctor_why"> </string>
+
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+    <string name="gps_enable">Votre GPS est requis, voulez-vous l\'activer?</string>
+    <string name="detecting_gps">Détecter votre gps. Veuillez réessayer</string>
+    <string name="location_dist">Vous ne pouvez pas enregistrer un cas si loin de votre position actuelle.</string>
+    <string name="last_update_status">Dernière mise à jour sur l\'emplacement</string>
+    <string name="country_head">Sélectionnez une région</string>
+    <string name="loading">Chargement....</string>
+    <string name="registraion">La fenêtre d\'inscription est fermée pour l\'instant. Vérifiez plus tard </string>
+    <string name="spam">Veuillez ne pas envoyer de spam. Vous avez déjà enregistré un cas, revenez plus tard!</string>
+    <string name="Error">Erreur est survenued</string>
+    <string name="Gps">GPS introuvable</string>
+    <string name="danger">Danger</string>
+    <string name="unsafe">Peu sûr</string>
+    <string name="confirmed_cases">Cas confirmés</string>
+    <string name="unsure_cases">Cas incertains</string>
+    <string name="confirmed">Confirmé</string>
+    <string name="unsure">Incertaine</string>
+    <string name="info">Toutes les données fournies ici sont extraites de plusieurs sources. Veuillez ne pas vous y fier complètement, assurez-vous d\'être au courant de votre situation locale. Utilisez-le à des fins de référencement et d\'éducation uniquement</string>
+
+    <string name="communicate">Communiquer</string>
+    <string name="chooser_title">Ouvrez et connectez-vous pour continuer</string>
+    <string name="share_title">Partager l\'application sur</string>
+    <string name="share_text">Enfin une application pour les mises à jour COVID-19. Ne vous inquiétez plus des rumeurs et de la propagation de la couronne. Veuillez toujours consulter la destination dans l\'application avant de voyager.
+        \n \n Fonctionnalités de l\'application: \n
+        \n 1.Supporte presque toutes les langues du monde.
+        \n 2.Suivez la propagation de COVID-19 dans votre localité et les lieux fouillés.
+        \n 3.Un bureau d\'enregistrement, pour enregistrer un boîtier COVID-19.
+        \n 4.Liste de toutes les précautions et symptômes de COVID-19.
+        \n \n Partagez-le avec tous vos proches, votre famille et vos amis pour les protéger de cette pandémie.
+        \n Téléchargez-le à partir du lien ci-dessous \n
+    </string>
+    <string name="share_subject">S\'il vous plaît jetez un oeil</string>
+
 </resources>
