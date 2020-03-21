@@ -427,6 +427,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 try {
                     double lat = data.getDoubleExtra("lat", 0.0d);
                     double lng = data.getDoubleExtra("lng", 0.0d);
+                    statuslatlng = new LatLng(lat,lng);
                     // Creating a marker
                     MarkerOptions markerOptions = new MarkerOptions();
                     // Setting the position for the marker
@@ -585,7 +586,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 markerOptions.position(ltLng);
                 markerOptions.icon(BitmapDescriptorFactory.defaultMarker(220));
                 // Clears the previously touched position
-                if (marker!=null) {
+                if (marker!=null && statuslatlng!=null) {
                     if (getKmFromLatLong(statuslatlng.latitude,statuslatlng.longitude, ltLng.latitude, ltLng.longitude)>5) {
                         mMap.clear();
                         statuslatlng = ltLng;
