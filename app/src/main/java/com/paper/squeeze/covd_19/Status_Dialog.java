@@ -32,13 +32,22 @@ public class Status_Dialog extends DialogFragment {
         getDialog().setCanceledOnTouchOutside(true);
 
         cardView = v.findViewById(R.id.cardView);
-        status = v.findViewById(R.id.status_head);
+        status = v.findViewById(R.id.status);
         confirmed = v.findViewById(R.id.confirmed_case_num);
         unsure = v.findViewById(R.id.unsure_case_num);
         datestr = v.findViewById(R.id.date);
 
         if (title.equals(getString(R.string.status)))
+            cardView.setCardBackgroundColor(getResources().getColor(R.color.green));
+        else if(title.equals(getString(R.string.unsafe)))
+            cardView.setCardBackgroundColor(getResources().getColor(R.color.orange));
+        else
+            cardView.setCardBackgroundColor(getResources().getColor(R.color.red));
 
+        status.setText(title);
+        confirmed.setText(admin+" ");
+        unsure.setText(user+" ");
+        datestr.setText(date);
 
         return v;
     }
