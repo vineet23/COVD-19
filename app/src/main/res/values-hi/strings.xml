@@ -5,8 +5,8 @@
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
     <string name="action_search" translatable="false">Search</string>
     <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
-    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
-    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+    <string name="url" translatable="false">https://api.papersqueeze.com/corona/</string>
+    <string name="auth" translatable="false">Token da0646e9548cb3fca6ac7e15ed2810a2fd53d2f5</string>
 
     <string name="last_update">पर अंतिम अद्यतन</string>
     <string name="status">सुरक्षित</string>
