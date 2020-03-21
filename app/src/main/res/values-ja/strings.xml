@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
+    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+
+    <string name="last_update">最終更新日</string>
+    <string name="status">安全</string>
+    <string name="prevention">注意事項</string>
+    <string name="symptoms">症状</string>
+    <string name="tracker">トラッカー</string>
+    <string name="register">ケース登録</string>
+    <string name="register_name">登録</string>
+    <string name="help">助けて</string>
+    <string name="share">共有</string>
+    <string name="feedback">フィードバック</string>
+    <string name="active_case">アクティブなケース</string>
+    <string name="fatal_case">致命的なケース</string>
+    <string name="recovered_case">回収された事例</string>
+    <string name="condition_victim">被害者の状態</string>
+    <string name="active">アクティブ</string>
+    <string name="recovered">回復した</string>
+    <string name="fatal">致命的</string>
+    <string name="termsandcond">通知</string>
+    <string name="i_agree">上記の条件に同意します</string>
+    <string name="done">完了</string>
+    <string name="terms_text">スパムが見つかった場合、セッションは拒否され、結果として
+        あなたのためのサービスの終了。提供されたデータは、他のユーザーがステータスを確認するために利用できます。
+        当社はお客様から提供されたデータを所有しているため、提供されたデータの品質に応じて変更または削除できます。
+        他のユーザーに反映され、地元の人々にパニックを引き起こす可能性があるため、スパムを送信しないでください。
+        提供されたデータは、COVID-19の広がりと影響を分析するために使用されるため、データが
+        正確で純粋です。プライバシーは維持され、データは保護され、教育目的での使用のみを目的としています
+        と医療目的。お互いに気づきを助け、COVID-19と一緒に戦おう。
+    </string>
+
+    <string name="why">どうして？</string>
+    <string name="next">次</string>
+    <string name="back">バック</string>
+    <string name="tracker_head">COVID-19トラッカー</string>
+    <string name="location_needed">場所の許可が必要です。</string>
+    <string name="retry">リトライ</string>
+    <string name="unable_detect">現在地を検出できません！</string>
+    <string name="detecting">検出しています... GPSがオンになっていることを確認してください！</string>
+    <string name="search_location">場所を検索...</string>
+    <string name="search_empty">より良い結果を得るために正確なキーワードで検索する</string>
+    <string name="no_internet">おっとっと！何らかのエラーが発生しました。インターネットに接続していることを確認してください。</string>
+    <string name="try_again">おっとっと！何かがうまくいかなかった。再試行</string>
+
+    <string name="wash_header">頻繁に手を洗う</string>
+    <string name="wash_detail">定期的に徹底的にアルコールベースの手でこするか、石鹸と水で手を洗ってください。</string>
+    <string name="wash_why">石鹸と水で手を洗ったり、アルコールベースの手でこすることで、手にある可能性のあるウイルスを殺します。</string>
+
+    <string name="social_header">社会的距離を保つ</string>
+    <string name="social_detail">自分と咳やくしゃみをしている人との距離を少なくとも1メートル（3フィート）維持してください。</string>
+    <string name="social_why">誰かが咳やくしゃみをすると、ウイルスを含んでいる可能性のある鼻や口から小さな液滴を噴霧します。近くにいると、咳をしている人が病気にかかっている場合、COVID-19ウイルスを含む水滴を吸い込むことができます。</string>
+
+    <string name="eyes_header">目、鼻、口に触れないようにしてください</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">手は多くの表面に触れ、ウイルスを拾う可能性があります。汚染されると、手はウイルスを目、鼻、口に移します。そこから、ウイルスが体内に入り込み、病気になります。</string>
+
+    <string name="hygiene_header">呼吸器衛生の実践</string>
+    <string name="hygiene_detail">あなたとあなたの周りの人々が良好な呼吸器衛生を守るようにしてください。これは、咳やくしゃみをするときに、曲がった肘や組織で口と鼻を覆うことを意味します。その後、使用済みの組織はすぐに廃棄してください。</string>
+    <string name="hygiene_why">液滴がウイルスを拡散します。適切な呼吸器衛生を守ることで、風邪、インフルエンザ、COVID-19などのウイルスから周囲の人々を保護します。</string>
+
+    <string name="medical_header">発熱、咳、呼吸困難がある場合は、早めに医療を受けてください</string>
+    <string name="medical_detail">気分が悪いときは家にいてください。発熱、咳、呼吸困難がある場合は、医師の診察を受け、事前に電話してください。地元の保健当局の指示に従ってください。</string>
+    <string name="medical_why">国内および地方自治体は、お住まいの地域の状況に関する最新情報を入手できます。事前に電話することで、医療提供者は適切な医療施設に迅速に誘導できます。これはまた、あなたを保護し、ウイルスやその他の感染の広がりを防ぐのに役立ちます。</string>
+
+    <string name="informed_header">最新情報を入手し、医療提供者からのアドバイスに従ってください</string>
+    <string name="informed_detail">COVID-19の最新の開発情報を入手してください。 COVID-19から自分や他の人を守る方法については、医療提供者、国および地方の公衆衛生当局、または雇用主からのアドバイスに従ってください。</string>
+    <string name="informed_why">国および地方自治体は、COVID-19があなたの地域に広がっているかどうかに関する最新情報を入手します。彼らはあなたの地域の人々が自分自身を守るために何をすべきかについて助言するのに最適です。</string>
+
+    <string name="doctor_header">パニックに陥らないで、医療の助けを求める</string>
+    <string name="doctor_detail">COVID-19の緊急警告標識を作成した場合は、すぐに医師の診察を受けてください。緊急警告サインには以下が含まれます*：\n \n
+        1.発熱と咳 \n
+        2.呼吸困難または息切れ \n
+        3.胸の持続的な痛みまたは圧迫 \n
+        4.新たな混乱または覚醒不能 \n
+        5.唇または顔の青みがかった \n \n \n
+        *このリストはすべてを網羅しているわけではありません。重度または懸念されるその他の症状については、医療提供者にご相談ください。</string>
+    <string name="doctor_why"> </string>
+</resources>

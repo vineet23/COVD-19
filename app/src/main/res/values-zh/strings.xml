@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
+    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+
+    <string name="last_update">最近更新</string>
+    <string name="status">安全</string>
+    <string name="prevention">注意事项</string>
+    <string name="symptoms">病征</string>
+    <string name="tracker">追踪器</string>
+    <string name="register">注册案例</string>
+    <string name="register_name">寄存器</string>
+    <string name="help">救命</string>
+    <string name="share">分享</string>
+    <string name="feedback">反馈</string>
+    <string name="active_case">活动案例</string>
+    <string name="fatal_case">致命案例</string>
+    <string name="recovered_case">恢复的案件</string>
+    <string name="condition_victim">受害人的状况</string>
+    <string name="active">活性</string>
+    <string name="recovered">已恢复</string>
+    <string name="fatal">致命</string>
+    <string name="termsandcond">注意</string>
+    <string name="i_agree">我同意以上条款</string>
+    <string name="done">完成</string>
+    <string name="terms_text">如果发现垃圾邮件，您的会话将被拒绝，这将导致
+        为您终止服务。您提供的数据将可供其他人检查状态。
+        我们拥有您提供的数据，因此可以根据所提供数据的质量进行修改或删除。
+        请确保您不会发送垃圾邮件，因为它会反映给其他人，并可能对当地人造成恐慌。
+        您提供的数据将用于分析COVID-19的传播和影响，因此请确保数据
+        是准确而纯粹的。维护隐私并保护数据安全，仅用于教育
+        和医疗目的。互相帮助，让我们一起对抗COVID-19。
+    </string>
+
+    <string name="why">为什么？</string>
+    <string name="next">下一个</string>
+    <string name="back">背部</string>
+    <string name="tracker_head">COVID-19追踪器</string>
+    <string name="location_needed">需要位置许可。</string>
+    <string name="retry">重试</string>
+    <string name="unable_detect">无法检测到当前位置！</string>
+    <string name="detecting">正在检测...。请确保已打开gps！</string>
+    <string name="search_location">搜索位置...</string>
+    <string name="search_empty">使用准确的关键字搜索以获得更好的结果</string>
+    <string name="no_internet">糟糕！发生了一些错误。确保您已连接到互联网。</string>
+    <string name="try_again">糟糕！有些不对劲。再试一次</string>
+
+    <string name="wash_header">经常洗手</string>
+    <string name="wash_detail">定期用酒精擦手，或用肥皂和水彻底清洗双手。</string>
+    <string name="wash_why">用肥皂和水洗手或使用酒精基的手擦可杀死手上的病毒。</string>
+
+    <string name="social_header">保持社会距离</string>
+    <string name="social_detail">与咳嗽或打喷嚏的人之间至少要保持1米（3英尺）的距离。</string>
+    <string name="social_why">当某人咳嗽或打喷嚏时，他们会从其鼻子或嘴中喷出可能含有病毒的小液滴。如果距离太近，如果咳嗽的人患有疾病，则可以吸入包括COVID-19病毒在内的飞沫。</string>
+
+    <string name="eyes_header">避免触摸眼睛，鼻子和嘴巴</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">手接触许多表面并可能吸收病毒。一旦被污染，手可以将病毒传播到您的眼睛，鼻子或嘴巴。病毒可以从那里进入您的身体，使您生病。</string>
+
+    <string name="hygiene_header">练习呼吸卫生</string>
+    <string name="hygiene_detail">确保您和周围的人遵守良好的呼吸道卫生规定。这意味着在咳嗽或打喷嚏时，用弯曲的肘部或组织遮住口鼻。然后立即处理用过的纸巾。</string>
+    <string name="hygiene_why">飞沫传播病毒。通过遵守良好的呼吸卫生规定，可以保护周围的人免受感冒，流感和COVID-19等病毒的侵害。</string>
+
+    <string name="medical_header">如果发烧，咳嗽和呼吸困难，请尽早就医。</string>
+    <string name="medical_detail">如果感觉不适，请待在家里。如果发烧，咳嗽和呼吸困难，请寻求医疗救助并提前致电。请遵循当地卫生部门的指示。</string>
+    <string name="medical_why">国家和地方当局将提供有关您所在地区情况的最新信息。提前致电将使您的医疗保健提供者迅速将您引向正确的医疗机构。这也将保护您并帮助防止病毒传播和其他感染。</string>
+
+    <string name="informed_header">保持了解情况并听从您的医疗保健提供者的建议</string>
+    <string name="informed_detail">随时了解有关COVID-19的最新动态。遵循您的医疗保健提供者，您的国家和地方公共卫生当局或您的雇主提供的有关如何保护自己和他人免受COVID-19的建议。</string>
+    <string name="informed_why">国家和地方当局将提供有关COVID-19是否在您所在地区传播的最新信息。他们最适合就您所在地区的人们应该采取哪些措施来保护自己提供建议。</string>
+
+    <string name="doctor_header">不要惊慌，寻求医疗帮助</string>
+    <string name="doctor_detail">如果您发现COVID-19的紧急警告信号，请立即就医。紧急警告标志包括*：\n \n
+        1.发烧和咳嗽 \n
+        2.呼吸困难或呼吸急促 \n
+        3.持续的疼痛或胸部压力 \n
+        4.新的困惑或无法激发 \n
+        5.嘴唇或脸发蓝 \n \n \n
+        *此列表并非全部包含在内。如果有其他严重症状或相关症状，请咨询您的医疗服务提供者。</string>
+    <string name="doctor_why"> </string>
+</resources>

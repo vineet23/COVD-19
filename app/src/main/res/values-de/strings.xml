@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
+    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+
+    <string name="last_update">Letztes Update am</string>
+    <string name="status">Sicher</string>
+    <string name="prevention">Vorsichtsmaßnahmen</string>
+    <string name="symptoms">Symptome</string>
+    <string name="tracker">Tracker</string>
+    <string name="register">Fall registrieren</string>
+    <string name="register_name">Registrieren</string>
+    <string name="help">Hilfe</string>
+    <string name="share">Teilen</string>
+    <string name="feedback">Feedback</string>
+    <string name="active_case">Aktive Fälle</string>
+    <string name="fatal_case">Tödliche Fälle</string>
+    <string name="recovered_case">Wiederhergestellte Fälle</string>
+    <string name="condition_victim">Zustand des Opfers</string>
+    <string name="active">Aktiv</string>
+    <string name="recovered">Wiederhergestellt</string>
+    <string name="fatal">Tödlich</string>
+    <string name="termsandcond">Beachten</string>
+    <string name="i_agree">Ich stimme den obigen Bedingungen zu</string>
+    <string name="done">Erledigt</string>
+    <string name="terms_text">Wenn Spam gefunden wird, wird Ihre Sitzung abgelehnt, was dazu führt
+        Beendigung des Dienstes für Sie. Die von Ihnen bereitgestellten Daten stehen den anderen zur Verfügung, um den Status zu überprüfen.
+        Wir besitzen die von Ihnen bereitgestellten Daten und können sie daher entsprechend der Qualität der bereitgestellten Daten ändern oder löschen.
+        Bitte stellen Sie sicher, dass Sie keinen Spam versenden, da dieser für andere reflektiert wird und bei den Einheimischen Panik auslösen kann.
+        Die von Ihnen bereitgestellten Daten werden verwendet, um die Verbreitung und Wirkung von COVID-19 zu analysieren. Stellen Sie daher sicher, dass die Daten vorliegen
+        ist genau und rein. Die Privatsphäre wird gewahrt und die Daten werden gesichert und sind nur für Bildungszwecke bestimmt
+        und medizinischer Zweck. Helfen Sie einander, sich bewusst zu werden, und lassen Sie uns gemeinsam gegen COVID-19 kämpfen.
+    </string>
+
+    <string name="why">Warum?</string>
+    <string name="next">NÄCHSTER</string>
+    <string name="back">ZURÜCK</string>
+    <string name="tracker_head">COVID-19 Tracker</string>
+    <string name="location_needed">Eine Standortgenehmigung ist erforderlich.</string>
+    <string name="retry">Wiederholen</string>
+    <string name="unable_detect">Aktueller Standort kann nicht erkannt werden!</string>
+    <string name="detecting">Erkennen .... bitte stellen Sie sicher, dass GPS eingeschaltet ist!</string>
+    <string name="search_location">Suche nach einem Ort ...</string>
+    <string name="search_empty">Suchen Sie mit genauen Stichwörtern nach besseren Ergebnissen</string>
+    <string name="no_internet">Hoppla! Es ist ein Fehler aufgetreten. Stellen Sie sicher, dass Sie mit dem Internet verbunden sind.</string>
+    <string name="try_again">Hoppla! etwas ist schief gelaufen. Versuch es noch einmal</string>
+
+    <string name="wash_header">Waschen Sie Ihre Hände häufig</string>
+    <string name="wash_detail">Reinigen Sie Ihre Hände regelmäßig und gründlich mit einer alkoholbasierten Handmassage oder waschen Sie sie mit Wasser und Seife.</string>
+    <string name="wash_why">Wenn Sie Ihre Hände mit Wasser und Seife waschen oder mit Alkohol auf Handbasis reiben, werden Viren abgetötet, die sich möglicherweise auf Ihren Händen befinden.</string>
+
+    <string name="social_header">Behalten Sie soziale Distanz bei</string>
+    <string name="social_detail">Halten Sie einen Abstand von mindestens 1 Meter zwischen sich und allen Personen ein, die husten oder niesen.</string>
+    <string name="social_why">Wenn jemand hustet oder niest, sprüht er kleine Flüssigkeitströpfchen aus Nase oder Mund, die Viren enthalten können. Wenn Sie zu nahe sind, können Sie die Tröpfchen einatmen, einschließlich des COVID-19-Virus, wenn die Person, die hustet, an der Krankheit leidet.</string>
+
+    <string name="eyes_header">Berühren Sie nicht Augen, Nase und Mund</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">Hände berühren viele Oberflächen und können Viren aufnehmen. Einmal kontaminiert, können Hände das Virus auf Ihre Augen, Nase oder Mund übertragen. Von dort kann das Virus in Ihren Körper eindringen und Sie krank machen.</string>
+
+    <string name="hygiene_header">Atemhygiene üben</string>
+    <string name="hygiene_detail">Stellen Sie sicher, dass Sie und die Menschen um Sie herum eine gute Atemhygiene einhalten. Dies bedeutet, dass Sie beim Husten oder Niesen Mund und Nase mit gebeugtem Ellbogen oder Gewebe bedecken. Entsorgen Sie das gebrauchte Gewebe dann sofort.</string>
+    <string name="hygiene_why">Tröpfchen verbreiten das Virus. Durch eine gute Atemhygiene schützen Sie die Menschen um Sie herum vor Viren wie Erkältung, Grippe und COVID-19.</string>
+
+    <string name="medical_header">Wenn Sie Fieber, Husten und Atembeschwerden haben, suchen Sie frühzeitig einen Arzt auf</string>
+    <string name="medical_detail">Bleib zu Hause, wenn du dich unwohl fühlst. Wenn Sie Fieber, Husten und Atembeschwerden haben, suchen Sie einen Arzt auf und rufen Sie im Voraus an. Befolgen Sie die Anweisungen Ihrer örtlichen Gesundheitsbehörde.</string>
+    <string name="medical_why">Die nationalen und lokalen Behörden verfügen über die aktuellsten Informationen zur Situation in Ihrer Region. Wenn Sie im Voraus anrufen, kann Ihr Arzt Sie schnell zur richtigen Gesundheitseinrichtung weiterleiten. Dies schützt Sie auch und verhindert die Verbreitung von Viren und anderen Infektionen.</string>
+
+    <string name="informed_header">Bleiben Sie auf dem Laufenden und befolgen Sie die Ratschläge Ihres Arztes</string>
+    <string name="informed_detail">Bleiben Sie über die neuesten Entwicklungen zu COVID-19 auf dem Laufenden. Befolgen Sie die Anweisungen Ihres Gesundheitsdienstleisters, Ihrer nationalen und lokalen Gesundheitsbehörde oder Ihres Arbeitgebers, wie Sie sich und andere vor COVID-19 schützen können.</string>
+    <string name="informed_why">Die nationalen und lokalen Behörden erhalten die aktuellsten Informationen darüber, ob sich COVID-19 in Ihrer Region verbreitet. Sie sind am besten in der Lage zu beraten, was Menschen in Ihrer Nähe tun sollten, um sich selbst zu schützen.</string>
+
+    <string name="doctor_header">Keine Panik, suchen Sie medizinische Hilfe</string>
+    <string name="doctor_detail">Wenn Sie Notfallwarnzeichen für COVID-19 entwickeln, suchen Sie sofort einen Arzt auf. Zu den Notfallwarnzeichen gehören *: \n \n
+        1. Fieber und Husten \n
+        2. Atembeschwerden oder Atemnot \n
+        3. Anhaltende Schmerzen oder Druck in der Brust \n
+        4.Neue Verwirrung oder Unfähigkeit zu erregen \n
+        5.Blue Lippen oder Gesicht \n \n \n
+        * Diese Liste ist nicht vollständig. Bitte wenden Sie sich an Ihren Arzt, wenn andere schwerwiegende oder besorgniserregende Symptome vorliegen.</string>
+    <string name="doctor_why"> </string>
+
+</resources>

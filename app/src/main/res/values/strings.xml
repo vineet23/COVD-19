@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">COVID-19</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="action_search">Search</string>
-    <string name="api_key">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
-    <string name="url">http://192.168.0.102:8000/corona/</string>
-    <string name="auth">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
+    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
 
     <string name="last_update">Last update on</string>
     <string name="status">Safe</string>
@@ -101,9 +101,7 @@
     <string name="unsure_cases">Unsure cases</string>
     <string name="confirmed">Confirmed</string>
     <string name="unsure">Unsure</string>
+    <string name="info">All the data provided here is fetched from multiple sources. Please do not completely rely on it, make sure you are aware about your local situations. Use it for referencing and education purpose only </string>
 
-    <string name="_header"></string>
-    <string name="_detail"></string>
-    <string name="_why"></string>
-
+    <string name="communicate">Communicate</string>
 </resources>

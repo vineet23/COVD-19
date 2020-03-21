@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
+    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+
+    <string name="last_update">पर अंतिम अद्यतन</string>
+    <string name="status">सुरक्षित</string>
+    <string name="prevention">सावधानियां</string>
+    <string name="symptoms">लक्षण</string>
+    <string name="tracker">ट्रैकर</string>
+    <string name="register">मामला दर्ज करें</string>
+    <string name="register_name">रजिस्टर करें</string>
+    <string name="help">मदद</string>
+    <string name="share">शेयर</string>
+    <string name="feedback">प्रतिपुष्टि</string>
+    <string name="active_case">सक्रिय मामले</string>
+    <string name="fatal_case">घातक मामले</string>
+    <string name="recovered_case">बरामद मामले</string>
+    <string name="condition_victim">पीड़ित की स्थिति</string>
+    <string name="active">सक्रिय</string>
+    <string name="recovered">बरामद</string>
+    <string name="fatal">घातक</string>
+    <string name="termsandcond">नोटिस</string>
+    <string name="i_agree">मैं उपरोक्त शर्तों से सहमत हूं</string>
+    <string name="done">किया हुआ</string>
+    <string name="terms_text">
+यदि स्पैमिंग पाया गया तो आपका सत्र अस्वीकृत हो जाएगा, जिसके परिणामस्वरूप
+        आप के लिए सेवा की समाप्ति। आपके द्वारा प्रदान किया गया डेटा स्थिति की जांच करने के लिए दूसरों के लिए उपलब्ध होगा।
+        हम आपके द्वारा दिए गए डेटा के स्वामी हैं और इसलिए प्रदान किए गए डेटा की गुणवत्ता के अनुसार संशोधित या हटा सकते हैं।
+        कृपया सुनिश्चित करें कि आप स्पैम न करें क्योंकि यह दूसरों के लिए परिलक्षित होगा और स्थानीय लोगों के लिए आतंक पैदा कर सकता है।
+        आपके द्वारा प्रदान किए गए डेटा का उपयोग COVID-19 के प्रसार और प्रभाव का विश्लेषण करने के लिए किया जाएगा, इसलिए डेटा को सुनिश्चित करें
+        सटीक और शुद्ध है। गोपनीयता बनाए रखी जाती है और डेटा सुरक्षित किया जाता है, और केवल शैक्षिक के लिए उपयोग करना है
+        और चिकित्सा उद्देश्य। एक-दूसरे को जागरूक होने में मदद करें और COVID-19 के खिलाफ मिलकर लड़ने दें।
+    </string>
+
+    <string name="why">क्यों?</string>
+    <string name="next">आगे</string>
+    <string name="back">वापस</string>
+    <string name="tracker_head">COVID-19 ट्रैकर</string>
+    <string name="location_needed">स्थान की अनुमति की आवश्यकता है।</string>
+    <string name="retry">पुन: प्रयास करें</string>
+    <string name="unable_detect">वर्तमान स्थान का पता लगाने में असमर्थ!</string>
+    <string name="detecting">पता लगाने .... कृपया सुनिश्चित करें कि जीपीएस चालू है!</string>
+    <string name="search_location">किसी स्थान की खोज करें ...</string>
+    <string name="search_empty">बेहतर परिणामों के लिए सटीक कीवर्ड खोजें</string>
+    <string name="no_internet">ऊप्स! कुछ त्रुटि हुई। सुनिश्चित करें कि आप इंटरनेट से जुड़े हैं।</string>
+    <string name="try_again">ऊप्स! कुछ गलत हो गया। पुनः प्रयास करें</string>
+
+    <string name="wash_header">बार-बार हाथ धोएं</string>
+    <string name="wash_detail">अपने हाथों को अल्कोहल-आधारित हाथ से नियमित रूप से और अच्छी तरह से साफ करें या उन्हें साबुन और पानी से धोएं।</string>
+    <string name="wash_why">अपने हाथों को साबुन और पानी से धोना या अल्कोहल-आधारित हाथ रगड़ना उन वायरस को मारता है जो आपके हाथों पर हो सकते हैं।</string>
+
+    <string name="social_header">सामाजिक दूरी बनाए रखें</string>
+    <string name="social_detail">कम से कम 1 मीटर (3 फीट) की दूरी पर अपने आप को और किसी को भी, जो खांस रहा है या छींक रहा है, के बीच दूरी बनाए रखें।</string>
+    <string name="social_why">जब किसी को खांसी या छींक आती है तो वे अपनी नाक या मुंह से छोटी तरल बूंदें छिड़कते हैं जिनमें वायरस हो सकता है। यदि आप बहुत करीब हैं, तो आप खांसी में सांस ले सकते हैं, जिसमें सीओवीआईडी ​​-19 वायरस भी शामिल है यदि खांसी करने वाले व्यक्ति को यह बीमारी है।</string>
+
+    <string name="eyes_header">आंखों, नाक और मुंह को छूने से बचें</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">हाथ कई सतहों को छूते हैं और वायरस उठा सकते हैं। एक बार दूषित होने पर, हाथ वायरस को आपकी आंखों, नाक या मुंह में स्थानांतरित कर सकते हैं। वहां से, वायरस आपके शरीर में प्रवेश कर सकता है और आपको बीमार कर सकता है</string>
+
+    <string name="hygiene_header">श्वसन स्वच्छता का अभ्यास करें</string>
+    <string name="hygiene_detail">सुनिश्चित करें कि आप, और आपके आस-पास के लोग, अच्छी श्वसन स्वच्छता का पालन करें। इसका मतलब है खांसी या छींक आने पर अपनी मुड़ी हुई कोहनी या टिशू से अपने मुंह और नाक को ढंकना। फिर इस्तेमाल किए गए ऊतक का तुरंत निपटान करें।</string>
+    <string name="hygiene_why">बूंदों से वायरस फैलता है। अच्छी श्वसन स्वच्छता का पालन करके आप अपने आसपास के लोगों को सर्दी, फ्लू और सीओवीआईडी ​​-19 जैसे वायरस से बचाते हैं।</string>
+
+    <string name="medical_header">यदि आपको बुखार, खांसी और सांस लेने में कठिनाई है, तो जल्द चिकित्सा देखभाल की तलाश करें</string>
+    <string name="medical_detail">यदि आप अस्वस्थ महसूस करते हैं तो घर पर रहें। यदि आपको बुखार, खांसी और सांस लेने में कठिनाई है, तो चिकित्सा पर ध्यान दें और पहले से फोन करें। अपने स्थानीय स्वास्थ्य प्राधिकरण के निर्देशों का पालन करें।</string>
+    <string name="medical_why">आपके क्षेत्र की स्थिति की जानकारी के लिए राष्ट्रीय और स्थानीय अधिकारियों के पास सबसे अधिक तारीख होगी। अग्रिम में कॉल करने से आपका स्वास्थ्य देखभाल प्रदाता आपको जल्दी से सही स्वास्थ्य सुविधा के लिए निर्देशित कर सकेगा। यह आपकी रक्षा भी करेगा और वायरस और अन्य संक्रमणों को फैलने से रोकने में मदद करेगा।</string>
+
+    <string name="informed_header">सूचित रहें और अपने स्वास्थ्य देखभाल प्रदाता द्वारा दी गई सलाह का पालन करें</string>
+    <string name="informed_detail">COVID-19 के बारे में नवीनतम घटनाओं से अवगत रहें। अपने स्वास्थ्य देखभाल प्रदाता, अपने राष्ट्रीय और स्थानीय सार्वजनिक स्वास्थ्य प्राधिकरण या अपने नियोक्ता को COVID -19 से कैसे और कैसे बचाएं, इस पर दी गई सलाह का पालन करें।</string>
+    <string name="informed_why">आपके क्षेत्र में COVID-19 फैल रहा है या नहीं, इसकी जानकारी राष्ट्रीय और स्थानीय अधिकारियों के पास सबसे अधिक होगी। उन्हें इस बात की सलाह देने के लिए सर्वोत्तम स्थान दिया गया है कि आपके क्षेत्र के लोगों को अपनी सुरक्षा के लिए क्या करना चाहिए।</string>
+
+    <string name="doctor_header">घबराओ मत, चिकित्सा सहायता लो</string>
+    <string name="doctor_detail">यदि आप COVID-19 के लिए आपातकालीन चेतावनी संकेत विकसित करते हैं तो तुरंत चिकित्सा प्राप्त करें। आपातकालीन चेतावनी संकेतों में * शामिल हैं : \n \n
+        1. बुखार और खांसी
+        2. सांस लेने में तकलीफ या सांस की तकलीफ \n
+        3. छाती में लगातार दर्द या दबाव \n
+        4. कुछ भ्रम या असमर्थता पैदा करने के लिए \n
+        5. होंठों का फड़कना या \n \n \n चेहरा
+        *इस सूची सब समावेशी नहीं है। किसी भी अन्य लक्षणों के लिए कृपया अपने चिकित्सा प्रदाता से परामर्श करें जो गंभीर या संबंधित हैं।</string>
+    <string name="doctor_why"> </string>
+
+</resources>

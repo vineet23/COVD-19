@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">http://192.168.0.102:8000/corona/</string>
+    <string name="auth" translatable="false">Token 56d2800d2f331fb498b1a6ff68907a765bcc0418</string>
+
+    <string name="last_update">Ultimo aggiornamento su</string>
+    <string name="status">Sicuro</string>
+    <string name="prevention">Precauzioni</string>
+    <string name="symptoms">Sintomi</string>
+    <string name="tracker">Tracker</string>
+    <string name="register">Caso di registrazione</string>
+    <string name="register_name">Registrati</string>
+    <string name="help">Aiuto</string>
+    <string name="share">Condividere</string>
+    <string name="feedback">Risposta</string>
+    <string name="active_case">Casi attivi</string>
+    <string name="fatal_case">Casi fatali</string>
+    <string name="recovered_case">Casi recuperati</string>
+    <string name="condition_victim">Condizioni della vittima</string>
+    <string name="active">Attivo</string>
+    <string name="recovered">Recuperato</string>
+    <string name="fatal">Fatale</string>
+    <string name="termsandcond">Avviso</string>
+    <string name="i_agree">Accetto i termini sopra</string>
+    <string name="done">Fatto</string>
+    <string name="terms_text">Se viene trovato spamming, la sessione verrà rifiutata, il che si tradurrà in
+        cessazione del servizio per te. I dati forniti dall\'utente saranno disponibili per consentire agli altri di verificare lo stato.
+        Possediamo i dati forniti dall\'utente e pertanto possiamo modificarli o eliminarli in base alla qualità dei dati forniti.
+        Assicurati di non spam in quanto si rifletterà sugli altri e può creare panico per la gente del posto.
+        I dati forniti dall\'utente verranno utilizzati per analizzare la diffusione e l\'effetto di COVID-19, quindi assicurarsi che i dati
+        è preciso e puro. La privacy è mantenuta e i dati sono protetti, ed è destinato esclusivamente a scopi didattici
+        e scopo medico. Aiutarsi a vicenda per essere consapevoli e far combattere insieme contro COVID-19.
+    </string>
+
+    <string name="why">Perché?</string>
+    <string name="next">IL PROSSIMO</string>
+    <string name="back">INDIETRO</string>
+    <string name="tracker_head">Tracker COVID-19</string>
+    <string name="location_needed">È necessaria l\'autorizzazione alla posizione.</string>
+    <string name="retry">Riprova</string>
+    <string name="unable_detect">Impossibile rilevare la posizione corrente!</string>
+    <string name="detecting">Rilevamento .... assicurati che gps sia attivato!</string>
+    <string name="search_location">Cerca una posizione ...</string>
+    <string name="search_empty">Cerca con parole chiave accurate per risultati migliori</string>
+    <string name="no_internet">Oops! si è verificato un errore. Assicurati di essere connesso a Internet.</string>
+    <string name="try_again">Oops! qualcosa è andato storto. riprova</string>
+
+    <string name="wash_header">Lavati spesso le mani</string>
+    <string name="wash_detail">Pulisci regolarmente e accuratamente le mani con una mano a base alcolica o lavale con acqua e sapone.</string>
+    <string name="wash_why">Lavarsi le mani con acqua e sapone o usare uno straccio a base di alcol uccide i virus che potrebbero essere presenti sulle mani.</string>
+
+    <string name="social_header">Mantenere il distanziamento sociale</string>
+    <string name="social_detail">Mantenere una distanza di almeno 1 metro (3 piedi) tra se stessi e chiunque tossisca o starnutisca.</string>
+    <string name="social_why">Quando qualcuno tossisce o starnutisce, spruzzano piccole gocce di liquido dal naso o dalla bocca che possono contenere virus. Se sei troppo vicino, puoi respirare le goccioline, incluso il virus COVID-19 se la persona che tossisce ha la malattia.</string>
+
+    <string name="eyes_header">Evitare di toccare occhi, naso e bocca</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">Le mani toccano molte superfici e possono raccogliere virus. Una volta contaminate, le mani possono trasferire il virus a occhi, naso o bocca. Da lì, il virus può entrare nel tuo corpo e farti ammalare.</string>
+
+    <string name="hygiene_header">Pratica l\'igiene respiratoria</string>
+    <string name="hygiene_detail">Assicurati che tu e le persone intorno a te seguiate una buona igiene respiratoria. Ciò significa coprire la bocca e il naso con il gomito o il tessuto piegato quando si tossisce o starnutisce. Quindi smaltire immediatamente il tessuto usato.</string>
+    <string name="hygiene_why">Le goccioline diffondono il virus. Seguendo una buona igiene respiratoria proteggi le persone intorno a te da virus come raffreddore, influenza e COVID-19.</string>
+
+    <string name="medical_header">In caso di febbre, tosse e difficoltà respiratorie, consultare immediatamente un medico</string>
+    <string name="medical_detail">Resta a casa se non ti senti bene. In caso di febbre, tosse e difficoltà respiratorie, consultare un medico e chiamare in anticipo. Seguire le indicazioni dell\'autorità sanitaria locale.</string>
+    <string name="medical_why">Le autorità nazionali e locali disporranno delle informazioni più aggiornate sulla situazione nella tua zona. Chiamare in anticipo consentirà al tuo operatore sanitario di indirizzarti rapidamente alla giusta struttura sanitaria. Questo ti proteggerà e ti aiuterà a prevenire la diffusione di virus e altre infezioni.</string>
+
+    <string name="informed_header">Tieniti informato e segui i consigli forniti dal tuo medico</string>
+    <string name="informed_detail">Tieniti informato sugli ultimi sviluppi di COVID-19. Seguire i consigli forniti dal proprio fornitore di assistenza sanitaria, dall\'autorità sanitaria pubblica nazionale e locale o dal datore di lavoro su come proteggere se stessi e gli altri da COVID-19.</string>
+    <string name="informed_why">Le autorità nazionali e locali disporranno delle informazioni più aggiornate sul fatto che COVID-19 si stia diffondendo nella tua zona. Sono nella posizione migliore per consigliare su ciò che le persone nella tua zona dovrebbero fare per proteggersi.</string>
+
+    <string name="doctor_header">Non fatevi prendere dal panico, cercate assistenza medica</string>
+    <string name="doctor_detail">Se si sviluppano segnali di emergenza per COVID-19, consultare immediatamente un medico. I segnali di avvertimento di emergenza includono *: \n \n
+        1. Febbre e tosse \n
+        2. Difficoltà nella respirazione o mancanza di respiro \n
+        3. Dolore o pressione persistenti al torace \n
+        4. Nuova confusione o incapacità di suscitare \n
+        5.Blu labbra o viso \n \n \n
+        * Questo elenco non è tutto compreso. Consultare il proprio medico per qualsiasi altro sintomo grave o preoccupante.</string>
+    <string name="doctor_why"> </string>
+</resources>
