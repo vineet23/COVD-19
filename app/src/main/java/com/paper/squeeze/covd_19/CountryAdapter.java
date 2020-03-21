@@ -8,11 +8,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.myViewHolder> {
 
     CountryInterface countryInterface;
-    public CountryAdapter(CountryInterface countryInterface) {
+    ArrayList<CountryData> countryData;
+    public CountryAdapter(CountryInterface countryInterface,ArrayList<CountryData> countryData) {
         this.countryInterface = countryInterface;
+        this.countryData = countryData;
     }
 
     @NonNull
@@ -31,7 +35,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.myViewHo
 
     @Override
     public int getItemCount() {
-        return 50;
+        return countryData.size();
     }
 
     public class myViewHolder extends RecyclerView.ViewHolder{
@@ -45,6 +49,8 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.myViewHo
         }
 
         public void onBind(final int pos){
+            country.setText(countryData.get(pos).getName());
+            num.setText(countryData.get(pos).getTotalConfirmed()+"");
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

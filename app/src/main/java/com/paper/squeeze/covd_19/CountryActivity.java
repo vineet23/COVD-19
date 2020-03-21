@@ -28,7 +28,7 @@ public class CountryActivity extends AppCompatActivity implements CountryInterfa
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setHasFixedSize(true);
 
-        countryAdapter = new CountryAdapter(this);
+        countryAdapter = new CountryAdapter(this,TrackerActivity.countryData);
         recyclerView.setAdapter(countryAdapter);
 
         back.setOnClickListener(new View.OnClickListener() {

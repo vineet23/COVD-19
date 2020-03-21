@@ -2,6 +2,7 @@ package com.paper.squeeze.covd_19;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
@@ -10,8 +11,15 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkError;
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -20,8 +28,18 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.material.textfield.TextInputLayout;
 
-public class RegisterActivity extends AppCompatActivity implements OnMapReadyCallback {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
+public class RegisterActivity extends AppCompatActivity implements OnMapReadyCallback,RegisterInterface {
 
     SupportMapFragment mapFragment;
     GoogleMap mMap;
@@ -30,6 +48,9 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
     LatLng latLng;
 
     Button register;
+    AutoCompleteTextView editTextFilledExposedDropdown;
+    TextInputLayout layout;
+    TextView loading;
     int selected = 0;
 
     @Override
@@ -41,6 +62,8 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
 
         ImageView back = findViewById(R.id.back);
         register = findViewById(R.id.register_btn);
+        loading = findViewById(R.id.loading);
+        layout = findViewById(R.id.textInputLayout);
 
         String[] COUNTRIES = new String[] {getString(R.string.active),getString(R.string.recovered),getString(R.string.fatal)};
 
@@ -50,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
                         R.layout.menu_popup,
                         COUNTRIES);
 
-        AutoCompleteTextView editTextFilledExposedDropdown =
+        editTextFilledExposedDropdown =
                 findViewById(R.id.filled_exposed_dropdown);
         editTextFilledExposedDropdown.setAdapter(adapter);
         editTextFilledExposedDropdown.setText(editTextFilledExposedDropdown.getAdapter().getItem(0).toString(),false);
@@ -75,8 +98,13 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
                     status="fatal";
                 //check the distance between latlng and marker is less than 20km
                 if (getKmFromLatLong(latLng.latitude,latLng.longitude,marker.getPosition().latitude,marker.getPosition().longitude)<=20.0d) {
-                    Register_Dialog register_dialog = new Register_Dialog();
-                    register_dialog.show(getSupportFragmentManager(), "Dialog");
+                    if(marker.getPosition().latitude!=0.0d && marker.getPosition().longitude!=0.0d) {
+                        Register_Dialog register_dialog = new Register_Dialog(status, marker.getPosition().
+                                latitude, marker.getPosition().longitude,RegisterActivity.this);
+                        register_dialog.show(getSupportFragmentManager(), "Dialog");
+                    }else{
+                        Toast.makeText(getApplicationContext(),getString(R.string.loading),Toast.LENGTH_SHORT).show();
+                    }
                 }else{
                     //todo check for spam try again and again
                     Toast.makeText(getApplicationContext(),getString(R.string.location_dist),Toast.LENGTH_SHORT).show();
@@ -95,8 +123,68 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
                 finish();
             }
         });
+        //if same day
+        SharedPreferences preferences = getSharedPreferences(getString(R.string.app_name),MODE_PRIVATE);
+        String day = preferences.getString("day","");
+        if (day.equals(new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault()).format(new Date()))){
+            loading.setText(R.string.spam);
+        }
+        //else check the window
+        else {
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, getString(R.string.url) + "getwindow/",
+                    null, new Response.Listener<JSONObject>() {
+                @Override
+                public void onResponse(JSONObject response) {
+                    try {
+                        boolean live = response.getBoolean("live");
+                        String datetime = response.getString("datetime");
+                        if (live)
+                            finishLoading();
+                        else {
+                            try {
+                                SimpleDateFormat sourceFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+                                SimpleDateFormat destFormat = new SimpleDateFormat("MMM d, yyyy hh:mm:ss a"); //here 'a' for AM/PM
+                                Date date = sourceFormat.parse(datetime);
+                                String formattedDate = destFormat.format(date);
+                                loading.setText(getString(R.string.registraion) + "\n" + formattedDate + " UTC");
+                            } catch (Exception e) {
+                                Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+                                loading.setText(getString(R.string.registraion));
+                            }
+                        }
+                    } catch (JSONException e) {
+                        loading.setText(R.string.try_again);
+                    }
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError volleyError) {
+                    if (volleyError instanceof NetworkError)
+                        loading.setText(getString(R.string.no_internet));
+                    else
+                        loading.setText(getString(R.string.try_again));
+                }
+            }) {
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    HashMap<String, String> headers = new HashMap<String, String>();
+                    headers.put("Authorization", getString(R.string.auth));
+                    return headers;
+                }
+            };
+            MySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
+        }
     }
 
+    //to hide when done loading
+    public void finishLoading(){
+        register.setVisibility(View.VISIBLE);
+        layout.setVisibility(View.VISIBLE);
+        loading.setVisibility(View.GONE);
+    }
+
+
+    //to get the distance from the points in km
     public static double getKmFromLatLong(double lat1, double lng1, double lat2, double lng2){
         Location loc1 = new Location("");
         loc1.setLatitude(lat1);
@@ -163,5 +251,11 @@ public class RegisterActivity extends AppCompatActivity implements OnMapReadyCal
                 marker = markerUpdate;
             }
         });
+    }
+
+    @Override
+    public void Done(boolean b) {
+        if(b)
+            finish();
     }
 }
