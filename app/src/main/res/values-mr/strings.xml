@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">https://api.papersqueeze.com/corona/</string>
+    <string name="auth" translatable="false">Token da0646e9548cb3fca6ac7e15ed2810a2fd53d2f5</string>
+
+    <string name="last_update">शेवटचे अद्यतन</string>
+    <string name="status">सुरक्षित</string>
+    <string name="prevention">खबरदारी</string>
+    <string name="symptoms">लक्षणे</string>
+    <string name="tracker">ट्रॅकर</string>
+    <string name="register">प्रकरण नोंदवा</string>
+    <string name="register_name">नोंदणी करा</string>
+    <string name="help">मदत</string>
+    <string name="share">सामायिक करा</string>
+    <string name="feedback">अभिप्राय</string>
+    <string name="active_case">सक्रिय प्रकरणे</string>
+    <string name="fatal_case">प्राणघातक प्रकरणे</string>
+    <string name="recovered_case">पुनर्प्राप्त प्रकरणे</string>
+    <string name="condition_victim">बळीची स्थिती</string>
+    <string name="active">सक्रिय</string>
+    <string name="recovered">पुनर्प्राप्त</string>
+    <string name="fatal">प्राणघातक</string>
+    <string name="termsandcond">सूचना</string>
+    <string name="i_agree">मी वरील अटींशी सहमत आहे</string>
+    <string name="done">पूर्ण झाले</string>
+    <string name="terms_text">स्पॅमिंग आढळल्यास आपले सत्र नाकारले जाईल, ज्याचा परिणाम होईल
+        आपल्यासाठी सेवा समाप्त. आपण प्रदान केलेला डेटा इतरांना स्थिती तपासण्यासाठी उपलब्ध असेल.
+        आपल्याद्वारे प्रदान केलेला डेटा आमच्या मालकीचा आहे आणि म्हणून प्रदान केलेल्या डेटाच्या गुणवत्तेनुसार सुधारित किंवा हटवू शकतो.
+        कृपया याची खात्री करा की आपण स्पॅम घेणार नाही कारण ते इतरांना प्रतिबिंबित होईल आणि स्थानिकांसाठी दहशत निर्माण करू शकेल.
+        आपल्याद्वारे प्रदान केलेला डेटा सीव्हीडी -१ of च्या प्रसाराचा आणि परिणामाचे विश्लेषण करण्यासाठी वापरला जाईल, म्हणून डेटा सुनिश्चित करा
+        अचूक आणि शुद्ध आहे. गोपनीयता राखली जाते आणि डेटा सुरक्षित केला जातो आणि तो फक्त शैक्षणिक वापरासाठी केला जातो
+        आणि वैद्यकीय उद्देश. एकमेकांना जागरूक होण्यास मदत करा आणि कोविड विरूद्ध एकत्र लढा देऊ.
+    </string>
+
+    <string name="why">का?</string>
+    <string name="next">पुढे</string>
+    <string name="back">परत</string>
+    <string name="tracker_head">COVID-19 ट्रॅकर</string>
+    <string name="location_needed">स्थान परवानगी आवश्यक आहे.</string>
+    <string name="retry">पुन्हा प्रयत्न करा</string>
+    <string name="unable_detect">वर्तमान स्थान शोधण्यात अक्षम!</string>
+    <string name="detecting">शोधत आहे .... कृपया खात्री करा की जीपीएस चालू आहेत!</string>
+    <string name="search_location">स्थान शोधा ...</string>
+    <string name="search_empty">चांगल्या परिणामांसाठी अचूक कीवर्डसह शोधा</string>
+    <string name="no_internet">अरेरे! काही त्रुटी आली. आपण इंटरनेटशी कनेक्ट असल्याचे सुनिश्चित करा.</string>
+    <string name="try_again">अरेरे! काहीतरी चूक झाली. पुन्हा प्रयत्न करा</string>
+
+    <string name="wash_header">आपले हात वारंवार धुवा</string>
+    <string name="wash_detail"> नियमितपणे आणि नखांनी आपले हात अल्कोहोल-आधारित हाताने चोळा किंवा साबणाने आणि पाण्याने धुवा.</string>
+    <string name="wash_why">आपले हात साबणाने आणि पाण्याने धुण्यामुळे किंवा अल्कोहोल-आधारित हाताने घासण्याने आपल्या हातात असलेले विषाणू नष्ट होतात.</string>
+
+    <string name="social_header">सामाजिक अंतर राखणे</string>
+    <string name="social_detail">स्वत: मध्ये आणि खोकला किंवा शिंका येत असलेल्या प्रत्येकामध्ये कमीतकमी 1 मीटर (3 फूट) अंतर ठेवा.</string>
+    <string name="social_why">जेव्हा एखाद्याला खोकला किंवा शिंक लागतो तेव्हा त्यांच्या नाकातून किंवा तोंडावर लहान द्रव थेंब फवारले जातात ज्यात व्हायरस असू शकतो. जर तुम्ही खूप जवळ असाल तर तुम्ही खोकला असलेल्या व्यक्तीला हा आजार असल्यास कॉव्हीड विषाणूसह तुकड्यांमध्ये श्वास घेता येतो.</string>
+
+    <string name="eyes_header">डोळे, नाक आणि तोंडाला स्पर्श करणे टाळा</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">हात बर्‍याच पृष्ठभागास स्पर्श करतात आणि व्हायरस उचलू शकतात. एकदा दूषित झाल्यास हातांनी विषाणूचे डोळे, नाक किंवा तोंडात संक्रमण केले. तिथून, व्हायरस आपल्या शरीरात प्रवेश करू शकतो आणि आपल्याला आजारी बनवू शकतो.</string>
+
+    <string name="hygiene_header">श्वसन स्वच्छतेचा सराव करा</string>
+    <string name="hygiene_detail">आपण आणि आपल्या सभोवतालच्या लोकांनो, श्वसनाच्या चांगल्या स्वच्छतेचे अनुसरण करा. याचा अर्थ असा की जेव्हा आपण खोकला किंवा शिंकता तेव्हा आपले तोंड आणि नाक आपल्या वाकलेल्या कोपर किंवा ऊतकांनी झाकून टाका. मग वापरलेल्या ऊतकांची त्वरित विल्हेवाट लावा.</string>
+    <string name="hygiene_why">थेंब विषाणूचा प्रसार करतात. श्वसनाच्या चांगल्या स्वच्छतेचे पालन करून आपण आपल्या आजूबाजूच्या लोकांना सर्दी, फ्लू आणि कोविड सारख्या विषाणूंपासून वाचवतो.</string>
+
+    <string name="medical_header">जर आपल्याला ताप, खोकला आणि श्वास घेण्यास त्रास होत असेल तर लवकर वैद्यकीय सेवा घ्या</string>
+    <string name="medical_detail">आपण अस्वस्थ वाटत असल्यास घरी रहा. जर आपल्याला ताप, खोकला आणि श्वास घेण्यास त्रास होत असेल तर वैद्यकीय मदत घ्या आणि आगाऊ कॉल करा. आपल्या स्थानिक आरोग्य प्राधिकरणाच्या निर्देशांचे अनुसरण करा.</string>
+    <string name="medical_why">आपल्या भागातील परिस्थितीविषयी राष्ट्रीय आणि स्थानिक अधिका यांकडे अद्ययावत माहिती असेल. आगाऊ कॉल केल्यास आपल्या आरोग्य सेवा प्रदात्यास त्वरित आपल्याला योग्य आरोग्य सुविधेत निर्देशित करण्याची परवानगी मिळेल. हे आपले संरक्षण देखील करेल आणि व्हायरस आणि इतर संसर्गाचा फैलाव रोखण्यास मदत करेल.</string>
+
+    <string name="informed_header">माहिती ठेवा आणि आपल्या आरोग्य सेवा प्रदात्याने दिलेल्या सल्ल्याचे अनुसरण करा</string>
+    <string name="informed_detail">COVID-19 बद्दलच्या नवीनतम घडामोडींविषयी माहिती ठेवा. आपल्या आरोग्य सेवा प्रदात्याद्वारे, आपल्या राष्ट्रीय आणि स्थानिक सार्वजनिक आरोग्य प्राधिकरणाद्वारे किंवा आपल्या नियोक्तांनी स्वत: चे आणि इतरांना कोविड पासून कसे संरक्षित करावे याबद्दल दिलेल्या सल्ल्याचे अनुसरण करा.</string>
+    <string name="informed_why">आपल्या भागात कोविड पसरत आहे की नाही याची राष्ट्रीय व स्थानिक अधिका्यांकडे अद्ययावत माहिती असेल. आपल्या क्षेत्रामधील लोकांनी स्वतःचे रक्षण करण्यासाठी काय केले पाहिजे याविषयी त्यांना सल्ला देण्यासाठी त्यांना सर्वात चांगले स्थान दिले आहे.</string>
+
+    <string name="doctor_header">घाबरू नका, वैद्यकीय मदत घ्या</string>
+    <string name="doctor_detail">आपण कोविड साठी आपत्कालीन चेतावणीची चिन्हे विकसित केल्यास त्वरित वैद्यकीय मदत घ्या. आणीबाणीच्या चेतावणी चिन्हांमध्ये * समाविष्ट आहे: \n \n
+        1. ताप आणि खोकला \n
+        2. श्वासोच्छवासाची कमतरता किंवा श्वास लागणे \n
+        3. छातीत सतत वेदना किंवा दबाव \n
+        4. नवीन संभ्रम किंवा जागृत करण्यास असमर्थता \n
+        5.शुभ्र ओठ किंवा चेहरा \n \n \n
+        * ही यादी सर्वसमावेशक नाही. कृपया गंभीर किंवा संबंधित इतर कोणत्याही लक्षणांसाठी आपल्या वैद्यकीय प्रदात्याचा सल्ला घ्या.</string>
+    <string name="doctor_why"> </string>
+
+    <string name="yes">होय</string>
+    <string name="no">नाही</string>
+    <string name="gps_enable">आपला जीपीएस आवश्यक आहे, आपण हे सक्षम करू इच्छिता?</string>
+    <string name="detecting_gps">आपले GPS शोधत आहे कृपया पुन्हा प्रयत्न करा</string>
+    <string name="location_dist">आपण आपल्या वर्तमान स्थानापासून आतापर्यंत खटला नोंदवू शकत नाही.</string>
+    <string name="last_update_status">स्थानावरील शेवटचे अद्यतन</string>
+    <string name="country_head">प्रदेश निवडा</string>
+    <string name="loading">लोड करीत आहे ....</string>
+    <string name="registraion">नोंदणी विंडो आत्तासाठी बंद आहे. नंतर तपासा </string>
+    <string name="spam">कृपया स्पॅम करू नका. आपण यापूर्वीच गुन्हा नोंदविला आहे, नंतर परत या!</string>
+    <string name="Error"> त्रुटी आली</string>
+    <string name="Gps">GPS आढळला नाही</string>
+    <string name="danger">धोका</string>
+    <string name="unsafe">असुरक्षित</string>
+    <string name="confirmed_cases">पुष्टी केलेली प्रकरणे</string>
+    <string name="unsure_cases">अनिश्चित प्रकरणे</string>
+    <string name="confirmed">पुष्टी</string>
+    <string name="unsure">अनिश्चित</string>
+    <string name="info">येथे प्रदान केलेला सर्व डेटा एकाधिक स्त्रोतांमधून प्राप्त केलेला आहे. कृपया यावर पूर्णपणे विसंबून राहू नका, आपल्या स्थानिक परिस्थितीबद्दल आपल्याला माहिती आहे याची खात्री करा. याचा संदर्भ केवळ संदर्भ आणि शैक्षणिक उद्देशाने करा</string>
+
+    <string name="communicate">संवाद</string>
+    <string name="chooser_title">सुरू ठेवण्यासाठी उघडा आणि साइन इन करा</string>
+    <string name="share_title">यावर अ‍ॅप सामायिक करा</string>
+    <string name="share_text">शेवटी कोविड अद्यतनांसाठी अ‍ॅप. अफवा आणि कोरोना पसरल्याबद्दल यापुढे चिंता करणार नाही. कृपया प्रवास करण्यापूर्वी अॅपमधील गंतव्यस्थान पहा.
+        \n \n अॅप वैशिष्ट्ये: \n
+        \n 1. जगातील जवळजवळ सर्व भाषांचे समर्थन करा.
+        \n 2. आपल्या परिसर आणि शोधलेल्या ठिकाणी सीओव्हीडी चा प्रसार मागोवा घ्या.
+        \n कोविड प्रकरण नोंदवण्यासाठी एनए नोंदणी डेस्क.
+        \n 4. कोविड च्या सर्व खबरदारी आणि लक्षणांची यादी.
+        \n \n हे (साथीचे रोग) सर्व देशभर (किंवा खंडभर) असलेला हे सुरक्षित करण्यासाठी आपल्या सर्व प्रिय व्यक्ती, कुटुंब आणि मित्रांसह सामायिक करा.
+        \n खालील दुव्यावरुन ते डाउनलोड करा \n
+    </string>
+    <string name="share_subject">कृपया पहा</string>
+</resources>

@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                buildAlertMessageNoGps();
            }
         } else if (id == R.id.nav_share) {
-           String shareBody = "\n https://rebrand.ly/covid19app";
+           String shareBody = "\n https://rebrand.ly/covid19app \n\n"+"https://drive.google.com/open?id=1V8qTcnjZuWlPtxUXjQGkX3J2MCk3t2Ry";
            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
            sharingIntent.setType("text/plain");
            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_subject));
@@ -252,6 +252,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     //update the status
     public void updateStatus(final double lat,final double lng){
         //to make views gone and fetch data
+        loading.setText(getString(R.string.loading));
         loading.setVisibility(View.VISIBLE);
         date.setVisibility(View.GONE);
         last.setVisibility(View.GONE);
@@ -593,13 +594,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         updateStatus(ltLng.latitude, ltLng.longitude);
                     }
                     marker.remove();
+                    // Animating to the touched position
+                    mMap.animateCamera(CameraUpdateFactory.newLatLng(ltLng));
                 }else{
                     statuslatlng = ltLng;
                     mMap.clear();
                     updateStatus(ltLng.latitude, ltLng.longitude);
+                    // Animating to the touched position
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(ltLng,15f));
                 }
-                // Animating to the touched position
-                mMap.animateCamera(CameraUpdateFactory.newLatLng(ltLng));
                 // Placing a marker on the touched position
                 marker = mMap.addMarker(markerOptions);
             }

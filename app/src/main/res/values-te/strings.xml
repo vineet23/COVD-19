@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">COVID-19</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+    <string name="action_search" translatable="false">Search</string>
+    <string name="api_key" translatable="false">AIzaSyDLiIpwhROfPqlnCzPbbrAd2a3hVf_Hdx0</string>
+    <string name="url" translatable="false">https://api.papersqueeze.com/corona/</string>
+    <string name="auth" translatable="false">Token da0646e9548cb3fca6ac7e15ed2810a2fd53d2f5</string>
+
+    <string name="last_update">చివరి నవీకరణ</string>
+    <string name="status">సేఫ్</string>
+    <string name="prevention">జాగ్రత్తలు</string>
+    <string name="symptoms">లక్షణాలు</string>
+    <string name="tracker">ట్రాకర్</string>
+    <string name="register">కేసు నమోదు case</string>
+    <string name="register_name">నమోదు</string>
+    <string name="help">సహాయం</string>
+    <string name="share">వాటా</string>
+    <string name="feedback">అభిప్రాయం</string>
+    <string name="active_case">క్రియాశీల కేసులు</string>
+    <string name="fatal_case">ప్రాణాంతక కేసులు</string>
+    <string name="recovered_case">కేసులు కోలుకున్నాయి</string>
+    <string name="condition_victim">బాధితుడి పరిస్థితి</string>
+    <string name="active">క్రియాశీల</string>
+    <string name="recovered">కోలుకున్న</string>
+    <string name="fatal">ఫాటల్</string>
+    <string name="termsandcond">నోటీసు</string>
+    <string name="i_agree">పై నిబంధనలకు నేను అంగీకరిస్తున్నాను</string>
+    <string name="done">పూర్తి</string>
+    <string name="terms_text">స్పామింగ్ స్పామింగ్ అనిపిస్తే మీ సెషన్ తిరస్కరించబడుతుంది, దీని ఫలితంగా వస్తుంది
+        మీ కోసం సేవ యొక్క ముగింపు. మీరు అందించిన డేటా ఇతరులు స్థితిని తనిఖీ చేయడానికి అందుబాటులో ఉంటుంది.
+        మీరు అందించిన డేటాను మేము కలిగి ఉన్నాము మరియు అందువల్ల అందించిన డేటా యొక్క నాణ్యత ప్రకారం సవరించవచ్చు లేదా తొలగించవచ్చు.
+        దయచేసి మీరు స్పామ్ కాదని నిర్ధారించుకోండి, ఎందుకంటే ఇది ఇతరులకు ప్రతిబింబిస్తుంది మరియు స్థానికులకు భయాందోళనలను కలిగిస్తుంది.
+        మీరు అందించిన డేటా COVID-19 యొక్క వ్యాప్తి మరియు ప్రభావాన్ని విశ్లేషించడానికి ఉపయోగించబడుతుంది, కాబట్టి డేటాను నిర్ధారించుకోండి
+        ఖచ్చితమైనది మరియు స్వచ్ఛమైనది. గోప్యత నిర్వహించబడుతుంది మరియు డేటా సురక్షితం, మరియు ఇది విద్య కోసం మాత్రమే ఉపయోగించబడుతుంది
+        మరియు వైద్య ప్రయోజనం. అవగాహన కలిగి ఉండటానికి ఒకరికొకరు సహాయపడండి మరియు COVID-19 కి వ్యతిరేకంగా కలిసి పోరాడటానికి అనుమతిస్తుంది.
+    </string>
+
+    <string name="why">ఎందుకు?</string>
+    <string name="next">తరువాత</string>
+    <string name="back">తిరిగి</string>
+    <string name="tracker_head">COVID-19 ట్రాకర్</string>
+    <string name="location_needed">స్థాన అనుమతి అవసరం.</string>
+    <string name="retry">మళ్ళీ ప్రయత్నించు</string>
+    <string name="unable_detect">ప్రస్తుత స్థానాన్ని గుర్తించడం సాధ్యం కాలేదు!</string>
+    <string name="detecting">గుర్తించడం .... దయచేసి gps ఆన్ చేయబడిందని నిర్ధారించుకోండి!</string>
+    <string name="search_location">స్థానం కోసం శోధించండి ...</string>
+    <string name="search_empty">మంచి ఫలితాల కోసం ఖచ్చితమైన కీలకపదాలతో శోధించండి</string>
+    <string name="no_internet">అయ్యో! కొంత లోపం సంభవించింది. మీరు ఇంటర్నెట్‌కు కనెక్ట్ అయ్యారని నిర్ధారించుకోండి.</string>
+    <string name="try_again">అయ్యో! ఎక్కడో తేడ జరిగింది. మళ్ళీ ప్రయత్నించండి</string>
+
+    <string name="wash_header">మీ చేతులను తరచుగా కడగాలి</string>
+    <string name="wash_detail">మీ చేతులను ఆల్కహాల్ బేస్డ్ హ్యాండ్ రబ్ తో క్రమం తప్పకుండా శుభ్రంగా శుభ్రపరచండి లేదా సబ్బు మరియు నీటితో కడగాలి.</string>
+    <string name="wash_why">మీ చేతులను సబ్బు మరియు నీటితో కడగడం లేదా ఆల్కహాల్ ఆధారిత హ్యాండ్ రబ్ ఉపయోగించడం వల్ల మీ చేతుల్లో ఉండే వైరస్లను చంపుతుంది.</string>
+
+    <string name="social_header">సామాజిక దూరాన్ని నిర్వహించండి</string>
+    <string name="social_detail">మీకు మరియు దగ్గు లేదా తుమ్ము ఉన్నవారికి మధ్య కనీసం 1 మీటర్ (3 అడుగులు) దూరం నిర్వహించండి.</string>
+    <string name="social_why">ఎవరైనా దగ్గు లేదా తుమ్ము చేసినప్పుడు వారు ముక్కు లేదా నోటి నుండి చిన్న ద్రవ బిందువులను పిచికారీ చేస్తారు, ఇందులో వైరస్ ఉండవచ్చు. మీరు చాలా దగ్గరగా ఉంటే, దగ్గు వ్యక్తికి వ్యాధి ఉంటే మీరు COVID-19 వైరస్‌తో సహా బిందువులలో పిరి పీల్చుకోవచ్చు.</string>
+
+    <string name="eyes_header">కళ్ళు, ముక్కు మరియు నోరు తాకడం మానుకోండి</string>
+    <string name="eyes_detail"> </string>
+    <string name="eyes_why">చేతులు అనేక ఉపరితలాలను తాకుతాయి మరియు వైరస్లను తీయగలవు. కలుషితమైన తర్వాత, చేతులు మీ కళ్ళు, ముక్కు లేదా నోటికి వైరస్ను బదిలీ చేస్తాయి. అక్కడ నుండి, వైరస్ మీ శరీరంలోకి ప్రవేశిస్తుంది మరియు మిమ్మల్ని అనారోగ్యానికి గురి చేస్తుంది.</string>
+
+    <string name="hygiene_header">శ్వాసకోశ పరిశుభ్రత పాటించండి</string>
+    <string name="hygiene_detail">మీరు మరియు మీ చుట్టుపక్కల ప్రజలు మంచి శ్వాసకోశ పరిశుభ్రతను అనుసరిస్తున్నారని నిర్ధారించుకోండి. మీరు దగ్గు లేదా తుమ్ము ఉన్నప్పుడు మీ వంగిన మోచేయి లేదా కణజాలంతో మీ నోరు మరియు ముక్కును కప్పడం దీని అర్థం. అప్పుడు ఉపయోగించిన కణజాలాన్ని వెంటనే పారవేయండి.</string>
+    <string name="hygiene_why">బిందువులు వైరస్ వ్యాప్తి చెందుతాయి. మంచి శ్వాసకోశ పరిశుభ్రతను పాటించడం ద్వారా మీరు మీ చుట్టూ ఉన్న ప్రజలను జలుబు, ఫ్లూ మరియు COVID-19 వంటి వైరస్ల నుండి రక్షిస్తారు.</string>
+
+    <string name="medical_header">మీకు జ్వరం, దగ్గు మరియు శ్వాస తీసుకోవడంలో ఇబ్బంది ఉంటే, ముందుగానే వైద్య సంరక్షణ తీసుకోండి</string>
+    <string name="medical_detail">మీకు అనారోగ్యం అనిపిస్తే ఇంట్లో ఉండండి. మీకు జ్వరం, దగ్గు మరియు శ్వాస తీసుకోవడంలో ఇబ్బంది ఉంటే, వైద్య సహాయం తీసుకోండి మరియు ముందుగానే కాల్ చేయండి. మీ స్థానిక ఆరోగ్య అధికారం యొక్క సూచనలను అనుసరించండి.</string>
+    <string name="medical_why">మీ ప్రాంతంలోని పరిస్థితులపై జాతీయ మరియు స్థానిక అధికారులకు తాజా సమాచారం ఉంటుంది. ముందుగానే కాల్ చేస్తే మీ ఆరోగ్య సంరక్షణ ప్రదాత మిమ్మల్ని త్వరగా సరైన ఆరోగ్య సదుపాయానికి దారి తీస్తుంది. ఇది మిమ్మల్ని రక్షిస్తుంది మరియు వైరస్లు మరియు ఇతర ఇన్ఫెక్షన్ల వ్యాప్తిని నివారించడంలో సహాయపడుతుంది.</string>
+
+    <string name="informed_header">మీ ఆరోగ్య సంరక్షణ ప్రదాత ఇచ్చిన సలహాలను అనుసరించండి</string>
+    <string name="informed_detail">COVID-19 గురించి తాజా పరిణామాలపై సమాచారం ఇవ్వండి. COVID-19 నుండి మిమ్మల్ని మరియు ఇతరులను ఎలా రక్షించుకోవాలో మీ ఆరోగ్య సంరక్షణ ప్రదాత, మీ జాతీయ మరియు స్థానిక ప్రజారోగ్య అధికారం లేదా మీ యజమాని ఇచ్చిన సలహాలను అనుసరించండి.</string>
+    <string name="informed_why">మీ ప్రాంతంలో COVID-19 వ్యాప్తి చెందుతుందా అనే దానిపై జాతీయ మరియు స్థానిక అధికారులకు తాజా సమాచారం ఉంటుంది. మీ ప్రాంతంలోని ప్రజలు తమను తాము రక్షించుకోవడానికి ఏమి చేయాలో సలహా ఇవ్వడానికి వారు ఉత్తమంగా ఉంచారు.</string>
+
+    <string name="doctor_header">భయపడవద్దు, వైద్య సహాయం తీసుకోండి</string>
+    <string name="doctor_detail">మీరు COVID-19 కోసం అత్యవసర హెచ్చరిక సంకేతాలను అభివృద్ధి చేస్తే వెంటనే వైద్య సహాయం పొందండి. అత్యవసర హెచ్చరిక సంకేతాలలో *ఉన్నాయి: \n \n
+        1. జ్వరం మరియు దగ్గు \n
+        2. శ్వాస తీసుకోవడంలో ఇబ్బంది లేదా పిరి ఆడటం \n
+        3. ఛాతీలో నిరంతర నొప్పి లేదా ఒత్తిడి \n
+        4. కొత్త గందరగోళం లేదా ప్రేరేపించడానికి అసమర్థత \n
+        5. నీలం పెదాలు లేదా ముఖం \n \n \n
+        * ఈ జాబితా అంతా కలుపుకొని లేదు. తీవ్రమైన లేదా సంబంధించిన ఇతర లక్షణాల కోసం దయచేసి మీ మెడికల్ ప్రొవైడర్‌ను సంప్రదించండి.</string>
+    <string name="doctor_why"> </string>
+
+    <string name="yes">అవును</string>
+    <string name="no">తోబుట్టువుల</string>
+    <string name="gps_enable">మీ GPS అవసరం, మీరు దీన్ని ప్రారంభించాలనుకుంటున్నారా?</string>
+    <string name="detecting_gps">మీ gps ని గుర్తించడం. దయచేసి మళ్ళీ ప్రయత్నించండి</string>
+    <string name="location_dist">మీ ప్రస్తుత స్థానం నుండి మీరు ఇప్పటివరకు కేసు నమోదు చేయలేరు.</string>
+    <string name="last_update_status">స్థానంపై చివరి నవీకరణ</string>
+    <string name="country_head">ఒక ప్రాంతాన్ని ఎంచుకోండి</string>
+    <string name="loading">లోడ్....</string>
+    <string name="registraion">రిజిస్ట్రేషన్ విండో ప్రస్తుతానికి మూసివేయబడింది. తరువాత తనిఖీ చేయండి</string>
+    <string name="spam">దయచేసి స్పామ్ చేయవద్దు. మీరు ఇప్పటికే కేసు నమోదు చేసారు, తరువాత తిరిగి రండి!</string>
+    <string name="Error">లోపం సంభవించింది</string>
+    <string name="Gps">GPS కనుగొనబడలేదు</string>
+    <string name="danger">డేంజర్</string>
+    <string name="unsafe">అసురక్షిత</string>
+    <string name="confirmed_cases">ధృవీకరించబడిన కేసులు</string>
+    <string name="unsure_cases">ఖచ్చితంగా తెలియని కేసులు</string>
+    <string name="confirmed">ధ్రువీకరించారు</string>
+    <string name="unsure">ఐడియా</string>
+    <string name="info">ఇక్కడ అందించిన మొత్తం డేటా బహుళ వనరుల నుండి పొందబడుతుంది. దయచేసి దానిపై పూర్తిగా ఆధారపడకండి, మీ స్థానిక పరిస్థితుల గురించి మీకు తెలుసని నిర్ధారించుకోండి. దీనిని ప్రస్తావించడం మరియు విద్య ప్రయోజనం కోసం మాత్రమే ఉపయోగించండి</string>
+
+    <string name="communicate">కమ్యూనికేట్</string>
+    <string name="chooser_title">కొనసాగించడానికి తెరిచి సైన్ ఇన్ చేయండి</string>
+    <string name="share_title">అనువర్తనాన్ని భాగస్వామ్యం చేయండి</string>
+    <string name="share_text">చివరగా COVID-19 నవీకరణల కోసం ఒక అనువర్తనం. కరోనా యొక్క పుకార్లు మరియు వ్యాప్తి గురించి ఇక చింతించాల్సిన అవసరం లేదు. దయచేసి ప్రయాణించే ముందు అనువర్తనంలోని గమ్యాన్ని ఎల్లప్పుడూ చూడండి.
+        \n \n అనువర్తన లక్షణాలు :\n
+        \n 1. ప్రపంచంలోని దాదాపు అన్ని భాషలకు మద్దతు ఇవ్వండి.
+        \n 2. మీ ప్రాంతం మరియు శోధించిన ప్రదేశాలలో COVID-19 యొక్క వ్యాప్తిని ట్రాక్ చేయండి.
+        \n 3.ఒక రిజిస్ట్రేషన్ డెస్క్, COVID-19 కేసును నమోదు చేయడానికి.
+        \n 4. COVID-19 యొక్క అన్ని జాగ్రత్తలు మరియు లక్షణాల జాబితా.
+        \n \n మీ ప్రియమైనవారందరితో, కుటుంబ సభ్యులతో మరియు స్నేహితులతో భాగస్వామ్యం చేసుకోండి.
+        \n దిగువ లింక్ నుండి డౌన్‌లోడ్ చేయండి \n
+    </string>
+    <string name="share_subject">దయచేసి చూడండి</string>
+</resources>
