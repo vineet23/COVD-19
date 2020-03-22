@@ -99,6 +99,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
                         public void onResponse(JSONObject response) {
                             try {
                                 //get the global
+                                //Log.e("response",response.toString());
                                 countryData = new ArrayList<>();
                                 countryData.add(new CountryData(response.getString("displayName"),
                                         response.getInt("totalConfirmed"), response.getInt("totalDeaths"),
@@ -120,6 +121,19 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
                                                 subObject.getInt("totalConfirmed"), subObject.getInt("totalDeaths"),
                                                 subObject.getInt("totalRecovered"), subObject.getDouble("lat"), subObject.getLong("long")
                                                 , jsonObject.getString("country"), true));
+                                        try{
+                                            //for sub region
+                                            JSONArray jrArray = subObject.getJSONArray("areas");
+                                            for(int k =0;k<jrArray.length();k++){
+                                                JSONObject jrObject = jrArray.getJSONObject(k);
+                                                countryData.add(new CountryData(jrObject.getString("displayName")+" ("+subObject.getString("displayName")+")",
+                                                        jrObject.getInt("totalConfirmed"),jrObject.getInt("totalDeaths"),
+                                                        jrObject.getInt("totalRecovered"),jrObject.getDouble("lat"),jrObject.getLong("long"),
+                                                        subObject.getString("displayName"),true));
+                                            }
+                                        }catch (Exception e){
+                                            Log.e("error jr",e.toString());
+                                        }
                                     }
                                 }
                                 name.setText(countryData.get(0).getName());
@@ -131,6 +145,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
                                 LoadingFinish();
                                 addMarkers();
                             } catch (JSONException e) {
+                                //Log.e("error",e.toString());
                                 loading.setText(getString(R.string.try_again));
                             }
                         }
@@ -152,6 +167,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             };
             MySingleton.getInstance(getApplicationContext()).addToRequestQueue(jsonObjectRequest);
         }else{
+            try{
             //else load from previously loaded data
             name.setText(countryData.get(0).getName());
             namenum.setText(countryData.get(0).getTotalConfirmed() + "");
@@ -161,6 +177,11 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             loaded = true;
             LoadingFinish();
             addMarkers();
+            }catch (Exception e){
+                loaded= false;
+                loading.setVisibility(View.VISIBLE);
+                loading.setText(getString(R.string.try_again));
+            }
         }
     }
 
