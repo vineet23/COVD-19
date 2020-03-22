@@ -227,7 +227,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                buildAlertMessageNoGps();
            }
         } else if (id == R.id.nav_share) {
-           String shareBody = "\n https://rebrand.ly/covid19app \n\n"+"https://drive.google.com/open?id=1V8qTcnjZuWlPtxUXjQGkX3J2MCk3t2Ry";
+           String shareBody = "\n https://rebrand.ly/covid19app \n\n"+"https://drive.google.com/open?id=1V8qTcnjZuWlPtxUXjQGkX3J2MCk3t2Ry \n\n"+"https://drive.google.com/open?id=1-KZ0kXx2WPyoLJufmmYfJJuOv4Taq3wE";
            Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
            sharingIntent.setType("text/plain");
            sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, getString(R.string.share_subject));

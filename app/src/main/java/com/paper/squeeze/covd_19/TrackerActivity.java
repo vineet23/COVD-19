@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -121,7 +122,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
                                                 subObject.getInt("totalConfirmed"), subObject.getInt("totalDeaths"),
                                                 subObject.getInt("totalRecovered"), subObject.getDouble("lat"), subObject.getLong("long")
                                                 , jsonObject.getString("country"), true));
-                                        try{
+                                       /* try{
                                             //for sub region
                                             JSONArray jrArray = subObject.getJSONArray("areas");
                                             for(int k =0;k<jrArray.length();k++){
@@ -133,7 +134,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
                                             }
                                         }catch (Exception e){
                                             Log.e("error jr",e.toString());
-                                        }
+                                        }*/
                                     }
                                 }
                                 name.setText(countryData.get(0).getName());
@@ -176,7 +177,6 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             recoverednum.setText(countryData.get(0).getTotalRecovered() + "");
             loaded = true;
             LoadingFinish();
-            addMarkers();
             }catch (Exception e){
                 loaded= false;
                 loading.setVisibility(View.VISIBLE);
@@ -184,6 +184,7 @@ public class TrackerActivity extends AppCompatActivity implements OnMapReadyCall
             }
         }
     }
+
 
     //to set the view visible
     public void LoadingFinish(){
